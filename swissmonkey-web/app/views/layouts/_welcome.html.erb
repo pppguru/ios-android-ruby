@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <div class="top-title admin-title">Welcome
+    <strong>
+      <%= current_user.name %>
+    </strong>
+
+    <% if @notification_count %>
+      , You have
+      <%= $notificationCount %>notifications
+    <% end %>
+  </div>
+<% end %>

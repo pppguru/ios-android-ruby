@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:ignore="MissingPrefix"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            style="@style/regular_text"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin_medium"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="RESET PASSWORD"
+            android:textColor="@color/black"
+            android:textSize="@dimen/header_textsize"/>
+
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/et_oldPassword"
+        style="@style/regular_text"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/border_gray_bg"
+        android:hint="Old Password"
+        android:inputType="textPassword"
+        android:minWidth="300dp"
+        android:padding="@dimen/margin_medium"
+        android:textSize="@dimen/edittext_textsize"/>
+
+    <EditText
+        android:id="@+id/et_newPassword"
+        style="@style/regular_text"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:background="@drawable/border_gray_bg"
+        android:hint="New Password"
+        android:inputType="textPassword"
+        android:minWidth="300dp"
+        android:padding="@dimen/margin_medium"
+        android:textSize="@dimen/edittext_textsize"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signUpButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/btOK"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/ok"
+            android:textColor="@color/md_material_blue_600"
+            android:textSize="@dimen/header_textsize"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/silver"/>
+
+        <TextView
+            android:id="@+id/btCancel"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/cancel"
+            android:textColor="@color/md_material_blue_600"
+            android:textSize="@dimen/header_textsize"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

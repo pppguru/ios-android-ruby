@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.rapidbizapps.swissmonkey.RegisterActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image2"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_xxlarge"
+        android:layout_marginRight="@dimen/margin_xxlarge"
+        android:layout_marginTop="@dimen/margin_xlarge">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_onboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"/>
+
+        <TextView
+            android:id="@+id/tv_introText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:lineSpacingExtra="1.3dp"
+            android:text="@string/intro_text"
+            android:textColor="@color/black"/>
+
+
+        <com.rba.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/tv_introText"
+                            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NAME *"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/edittext_textsize"
+                    app:met_autoscale="true"
+                    app:met_baseColor="@color/edittext_textcolor"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                    app:met_primaryColor="@color/label_textcolor"
+                    app:met_singleLineEllipsis="true"/>
+
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="EMAIL *"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/edittext_textsize"
+                    app:met_autoscale="true"
+                    app:met_baseColor="@color/edittext_textcolor"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                    app:met_primaryColor="@color/label_textcolor"
+                    app:met_singleLineEllipsis="true"/>
+
+
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PASSWORD *"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/edittext_textsize"
+                    app:met_autoscale="true"
+                    app:met_baseColor="@color/edittext_textcolor"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                    app:met_primaryColor="@color/label_textcolor"
+                    app:met_singleLineEllipsis="true"/>
+
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_rePassword"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="REENTER PASSWORD *"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/edittext_textsize"
+                    app:met_autoscale="true"
+                    app:met_baseColor="@color/edittext_textcolor"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                    app:met_primaryColor="@color/label_textcolor"
+                    app:met_singleLineEllipsis="true"/>
+
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_searchingAs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/dropdown_arrow"
+                    android:hint="SELECT POSITION *"
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true"
+                    android:textSize="@dimen/edittext_textsize"
+                    app:met_autoscale="true"
+                    app:met_baseColor="@color/edittext_textcolor"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelPadding="@dimen/padding_xsmall"
+                    app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                    app:met_primaryColor="@color/label_textcolor"
+                    app:met_singleLineEllipsis="true"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/tandc_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"/>
+
+                    <TextView
+                        android:id="@+id/show_terms_and_conditions"
+                        style="@style/label_style"
+                        android:layout_alignBaseline="@id/tandc_cb"
+                        android:layout_toEndOf="@id/tandc_cb"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/margin_xxlarge"
+                    android:src="@drawable/register_copy"/>
+
+            </LinearLayout>
+
+        </com.rba.ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

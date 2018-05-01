@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rl_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/header_background_color"
+                tools:ignore="MissingPrefix"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingStart="@dimen/padding_small"
+                android:paddingTop="@dimen/padding_small">
+
+    <TextView
+        android:id="@+id/job_header_left_item"
+        style="@style/label_style"
+        android:layout_centerVertical="true"
+        android:text="Back to Search Results"
+        android:textColor="@color/purple2"
+        android:textAllCaps="true"
+        android:textSize="@dimen/label_hint_textsize"
+        fontPath="@string/bold_font_path"/>
+
+    <TextView
+        android:id="@+id/job_header_right_item"
+        style="@style/label_style"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:text="Advanced Search"
+        android:textColor="@color/purple2"
+        android:textAllCaps="true"
+        android:textSize="@dimen/label_hint_textsize"
+        fontPath="@string/bold_font_path"/>
+
+</RelativeLayout>

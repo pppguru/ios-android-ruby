@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+
+# Suite of useful development commands
+class Shovel < Thor
+  desc 'server', 'Install gems, reset the database, and run the Rails server'
+  def server
+    run 'bundle install'
+    run 'bundle exec rails db:reset'
+    run 'bundle exec rails server'
+  end
+
+  desc 'test', 'Run all of the same tests configured in CI, but fail fast'
+  def test
+    ENV['RAILS_ENV'] = 'test'
+
+    run 'bundle install'
+    run 'bundle exec rails db:environment:set RAILS_ENV=test'
+    run 'bundle exec rails db:reset RAILS_ENV=test'
+
+    ci_tests.each do |test|
+      run test
+    end
+  end
+
+  private
+
+  # run a command and exit if it fails
+  def run(command)
+    require 'English'
+
+    puts "\n### #{command} ###\n\n"
+
+    system command || exit($CHILD_STATUS)
+  end
+
+  # figure out what tests are configured in circle.yml
+  def ci_tests
+    require 'yaml'
+
+    config = YAML.safe_load(open('circle.yml'))
+    config['override'] ||= 'bundle exec rails spec'
+
+    tests = []
+    %w[pre override post].each do |phase|
+      tests += config['test'][phase] if config['test'].key?(phase)
+    end
+
+    tests
+  end
+end
+
+Shovel.start(ARGV)

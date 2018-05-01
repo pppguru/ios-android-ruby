@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:orientation="vertical"
+              android:background="@drawable/welcome_background"
+              tools:context=".HomeActivity"
+              tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/search_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_xxlarge"
+        android:layout_marginRight="@dimen/margin_xxlarge"
+        android:layout_weight="1.15">
+
+
+        <LinearLayout
+            android:id="@+id/et_position_container"
+            style="@style/edit_text_spinner_container_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xxlarge">
+            <com.rba.MaterialEditText
+                android:id="@+id/et_position"
+                style="@style/edit_text_spinner_style"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:hint="Select Positions"
+                />
+        </LinearLayout>
+
+        <com.rba.MaterialEditText
+            android:id="@+id/et_zip_or_city"
+            style="@style/edit_text_normal_style"
+            android:layout_below="@id/et_position_container"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:hint="@string/enter_zip_code_city"
+            android:inputType="textNoSuggestions"
+            android:gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/label_jobRange"
+            style="@style/regular_text"
+            android:layout_below="@id/et_zip_or_city"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:text="@string/find_a_job_with_in_a_range_of"
+            android:textSize="@dimen/label_hint_textsize"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:id="@+id/layout_jobRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_jobRange"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/decrement_miles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:src="@drawable/oval_26"/>
+
+            <TextView
+                android:id="@+id/find_in_range"
+                fontPath="@string/light_font_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:padding="@dimen/padding_xsmall"
+                android:text="20 miles"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/edittext_textsize"/>
+
+            <!--TODO replace src-->
+            <ImageView
+                android:id="@+id/increment_miles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:src="@drawable/plus"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_findNow"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/layout_jobRange"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:src="@drawable/group_14"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv_advanceSearch"
+            style="@style/regular_text"
+            android:layout_below="@id/iv_findNow"
+            android:layout_marginStart="@dimen/margin_small"
+            android:padding="@dimen/margin_small"
+            android:text="@string/advanced_search"
+            android:textSize="@dimen/label_hint_textsize"
+            android:textColor="@color/purple2"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:id="@+id/reveal_jobs_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/margin_large">
+
+            <ImageView
+                android:id="@+id/reveal_jobs_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/uparrow"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/job_menu"
+        layout="@layout/job_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
+        android:visibility="visible"/>
+
+</LinearLayout>

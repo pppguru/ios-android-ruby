@@ -1,0 +1,313 @@
+<div id="wrapper">
+  <div id="page-wrapper">
+
+    <% if @users_info.empty? %>
+
+      <div class="no-applicants">
+        <%= image_tag 'no-applicants.png', alt: 'No applicants' %>
+        <div class="clear"></div>
+        <p><strong>You have no applicants yet.<br/>
+          Please post a job if you haven't already. </strong>
+        </p>
+      </div>
+    <% else %>
+      <div class="applicants-top applicants-fits">
+        <ul>
+          <li <%= @application_status == 'All' ? 'active' : '' %>>
+            <%= link_to applicants_path(application_status: 'All',
+                                        company_id: @company_id, job_posting_id: @job_posting_id) do %>
+              All
+              (<%= @accepted_applicants_count + @pending_applicants_count + @rejected_applicants_count %>)
+            <% end %>
+          </li>
+          <li <%= @application_status == 'Pending' ? 'active' : '' %>>
+            <%= link_to applicants_path(application_status: 'Pending',
+                                        company_id: @company_id, job_posting_id: @job_posting_id) do %>
+              Pending Applications
+              (<%= @pending_applicants_count %>)
+            <% end %>
+          </li>
+          <li <%= @application_status == 'Accepted' ? 'active' : '' %>>
+            <%= link_to applicants_path(application_status: 'Accepted',
+                                        company_id: @company_id, job_posting_id: @job_posting_id) do %>
+              Good Fit
+              (<%= @accepted_applicants_count %>)
+            <% end %>
+          </li>
+          <li <%= @application_status == 'Rejected' ? 'active' : '' %>>
+            <%= link_to applicants_path(application_status: 'Rejected',
+                                        company_id: @company_id, job_posting_id: @job_posting_id) do %>
+              Poor Fit
+              (<%= @rejected_applicants_count %>)
+            <% end %>
+          </li>
+        </ul>
+        <div class="search-query02">
+          <% if @accepted_applicants.any? %>
+            <%= text_field_tag :searchaction, @search, class: 'search-query mac-style', placeholder: 'Users' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="contener-main margin-0">
+        <div class="col-lg-10 col-sm-9 col-md-9 col-xs-12 new-applic">
+          <div class="tabs-main margin-0">
+            <div class="mobile-box hidden-lg hidden-md hidden-sm">
+
+              <% if @companies.any? %>
+                <div class="hidden-lg hidden-md hidden-sm jobs-list jobs-list1 ">
+                  <div class="row">
+                    <div class="right-box sticky">
+
+                      <h4>Practice Addresses-All</h4>
+
+                      <ul>
+                        <% @companies.each do |company| %>
+                          <li class="<%= company.id == @company_id ? 'right-box-active' : '' %>">
+                            <%= link_to applicants_path(status: @application_status, company_id: company.id) do %>
+                              <strong><%= company.name %></strong>
+                              <br/>
+                              <%= company.primary_location.select_label %>
+                            <% end %>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <% if @job_postings.any? %>
+                <div class="hidden-lg hidden-md hidden-sm jobs-list jobs-list1 pull-right">
+                  <div class="row">
+                    <div class="right-box sticky">
+                      <h4>Job Postings</h4>
+                      <ul>
+                        <% @job_postings.each do |job_posting| %>
+                          <li class="<%= job_posting.id == @job_posting_id ? 'right-box-active' : '' %>">
+                            <%= link_to applicants_path(status: @application_status, company_id: @company.id, job_posting_id: job_posting.id) do %>
+                              <strong><%= job_posting.job_position.name %></strong>
+                              <br/>
+                              <span>Posted on <%= job_posting.created_at_pretty %></span>
+                            <% end %>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="applicants-result search-result"></div>
+            <div class="tab-content applicants-result hideinsearch margin-0">
+              <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 applicants-display">
+                  <div class="row">
+
+                    <% if @accepted_ranking.empty? %>
+                      <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="no-applicants">
+                          <%= image_tag 'no-applicants.png', alt: 'applicants' %>
+                          <div class="clear"></div>
+                          <p><strong>You have no Applicants.<br>
+                          </strong>
+                          </p>
+                        </div>
+                      </div>
+                    <% end %>
+
+                    <% @accepted_ranking.each do |rank_key, applications| %>
+                      <% job_posting_id, position_name, created_at = rank_key.split('||') %>
+                      <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="applicant-top">
+                          <h5><%= position_name %></h5>
+                          <p>Posted on <%= created_at %></p>
+                          <a href="<%= applications.length > 4 ? '#' : '' %>"
+                             style="<%= applications.length > 4 ? '' : 'color: #ccc' %>"
+                             class="search-all"
+                             id="<%= job_posting_id %>"><span>View All </span>
+                            <%= image_tag 'dwon-arrow.png', alt: 'dwon' %>
+                          </a>
+                        </div>
+                      </div>
+
+                      <% applications.each do |user_id, rank| %>
+                        <% applicant = @accepted_applicants[user_id] %>
+                        <div class="<%= applications.length > 4 ? 'hide_applicants ' + job_posting_id : '' %> col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                          <div style="cursor:pointer;"
+                               class="applicant-main
+                                    <%= applicant[:viewed] == "viewed" ? 'active' : '' %>
+                                    <%= applicant[:user_status] == "blocked" ? 'blocked' : '' %>
+                                    ">
+                            <div class="applic-left">
+
+                              <div class="applic-img">
+                                <% if applicant[:profile] %>
+                                  <a class="fancyboxprofile"
+                                     href="<%= applicant[:profile] %>">
+                                    <img class="img-circle" src="<%= applicant[:profile] %>"/>
+                                  </a>
+                                <% else %>
+                                  <a class="fancyboxprofile"
+                                     href="#">
+                                    <%= image_tag 'Oval 122.png' %>
+                                  </a>
+                                <% end %>
+                              </div>
+
+                              <div class="applic-txt">
+                                <a class="applicant-details-page" href="<%= profile_path(applicant[:id]) %>">
+                                  <h4><%= applicant[:user]&.name %></h4>
+                                  <ul>
+                                    <li><p>
+                                      Experience: <span><%= applicant[:experience] || 'NA' %></span>
+                                    </p></li>
+
+                                    <li><p>
+                                      Distance:
+                                      <span><%= applicant[:distance] ? "#{applicant[:distance].floor} miles" : 'NA' %></span>
+                                    </p></li>
+                                    <li><p>
+                                      $: <span><%= applicant[:salary] || 'NA' %></span>
+                                    </p></li>
+                                    <li class="margin-top-15">
+                                      <div class="thumb-phone">
+                                        <p class="phone-us-format">
+                                          <%= applicant[:user]&.phone_formatted || 'NA' %>
+                                        </p>
+                                      </div>
+                                      <div class="clear"></div>
+                                      <div class="thumb-mail">
+                                        <p>
+                                          <% if applicant[:user]&.email %>
+                                            <a href="mailto:<%= applicant[:user]&.email %>"><%= applicant[:user]&.email %></a>
+                                          <% else %>
+                                            NA
+                                          <% end %>
+                                        </p>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="applic-right">
+                              <div class="applic-btns" job_seeker_id="<%= applicant[:id] %>">
+                                <% if applicant[:application_status] != "Accepted" %>
+                                  <button type="button" class="good-fit <%= applicant[:user_status] == "blocked" ? 'hide-flag' : '' %>">Good
+                                    Fit
+                                  </button>
+                                <% end %>
+                                <% if applicant[:application_status] != "Accepted" && applicant[:application_status] != "Rejected" %>
+                                  <button type="button" class="poor-fit <%= applicant[:user_status] == "blocked" ? 'hide-flag' : '' %>">Poor
+                                    Fit
+                                  </button>
+                                <% end %>
+                              </div>
+                              <div class="clear"></div>
+                              <div class="ratingstars">
+                                <script>
+                                  stars(<%= rank %>+"%");
+                                </script>
+                              </div>
+                              <div class="clear"></div>
+                              <div class="applic-resume text-center">
+
+                                <div class="m" atr="<%= applicant[:id] %>">
+                                  <% if applicant[:resume_files].any? %>
+                                    <a class="resume-click fancyLaunch<%= applicant[:id] %>" id="n">
+                                      <%= image_tag 'resum.png', alt: 'resume' %>
+                                      <span>Resume</span>
+                                    </a>
+
+                                    <ul class="images<%= applicant[:id] %>">
+                                      <% applicant[:resume_files].each do |resume1| %>
+                                        <li>
+                                          <a href="<%= resume1 %>" title=""></a>
+                                        </li>
+                                      <% end %>
+                                    </ul>
+                                  <% else %>
+                                    <a class="no-resume">
+                                      <%= image_tag 'resum.png', alt: 'resume', class: 'resume-click' %>
+                                      <span>No Resume</span>
+                                    </a>
+                                  <% end %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <% if @companies.any? %>
+            <div class="col-lg-2 col-md-3 col-sm-3 hidden-xs jobs-list ">
+              <div class="row">
+                <div class="right-box sticky">
+                  <h4>Practice Addresses-All</h4>
+
+                  <ul id="printableComp">
+                    <% @companies.each do |company| %>
+                      <li class="<%= company.id == @company_id ? 'right-box-active' : 'right-comp' %>">
+                        <%= link_to applicants_path(
+                                        application_status: @application_status,
+                                        company_id: company.id, job_posting_id: 'allpostings'),
+                                    id: company.id do %>
+                          <b><%= company.name %></b>
+                          <br/>
+                          <%= company.company_locations.first.select_label %>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% if @positions_list.any? %>
+            <div
+            class="col-lg-2 col-md-3 col-sm-3 hidden-xs jobs-list pull-right">
+              <div class="row">
+                <div class="right-box sticky">
+                  <h4>Job Postings-All</h4>
+
+                  <ul id="printableArea">
+                    <% if @positions_list.any? %>
+                      <% @positions_list.each do |job_posting| %>
+                        <li class="<%= job_posting.id == @job_posting_id ? 'right-position-active' : 'right-position' %>">
+                          <a href="<%= applicants_path(application_status: @application_status,
+                                                       company_id: @company_id, job_posting_id: job_posting.id) %>"
+                             id="<%= job_posting.id %>"> <b><%= job_posting.job_position.name %></b><br/>
+                            <span>Posted on <%= job_posting.created_at_pretty %></span>
+                          </a>
+                        </li>
+                      <% end %>
+                    <% else %>
+                      <li><span>No Postings</span></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="clear"></div>
+
+      <% if @accepted_ranking %>
+        <%= paginate @job_postings %>
+      <% end %>
+      </div>
+    <% end %>
+
+    </div>
+
+<%= render 'no_resume_modal' %>
+<%= render 'accept_modal' %>
+<%= render 'reject_modal' %>

@@ -1,0 +1,90 @@
+<html>
+<head>
+  <title><%= full_head_title %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <%= javascript_include_tag 'application' %>
+
+  <script>
+    Stripe.setPublishableKey('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+
+    $(document).ready(function () {
+      $("#notifications-div").on("click", function (event) {
+        $.get('<%= notification_change_count_url %>'.js);
+      });
+      $('#loader-overlay').hide();
+      <% if current_user&.employer? %>
+      $.get('<%= subscription_summary_url %>.js');
+      <%  end %>
+      $.get('<%= notification_count_url %>.js');
+    });
+    setInterval(function (e) {
+      $.get('<%= notification_count_url %>.js');
+    }, 10000);
+  </script>
+  <style>
+    #activePostJob {
+      color: #553e70 !important;
+    }
+
+    .postajob {
+      background: #489EAB;
+      border: 1px solid #553e70;
+    }
+
+    .postajob:hover, .postajob:focus {
+      color: #553e70;
+      text-decoration: none;
+    }
+
+    .spancount {
+      margin-left: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body data-signed-in="<%= user_signed_in? ? 'true' : 'false' %>"
+      data-terms-agreed="<%= current_user&.accepted_terms? ? 'true' : 'false' %>"
+      data-user-email="<%= current_user&.email %>">
+
+<div id="loader-overlay">
+  <%= image_tag 'ajax-loader-spinner.gif', id: 'loader' %>
+  <div id="loadingProgressG">
+    <div id="loadingProgressG_1" class="loadingProgressG">
+    </div>
+  </div>
+</div>
+<%= render 'layouts/navbar' %>
+<div id="page-container" class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-sm-10">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+  </div>
+
+  <%= render 'shared/terms_modal' %>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="logo-info">
+      <%= image_tag 'images/logo.png', alt: 'SwissMonkey', class: 'pull-left' %>
+      <p>All rights reserved 2016-<%= Date.today.year %> @SwissMonkey</p>
+      <p> User ID: <%= current_user&.id %> <%= current_user&.email %></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

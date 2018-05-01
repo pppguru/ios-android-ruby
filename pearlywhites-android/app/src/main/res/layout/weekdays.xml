@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/weekLL"
+              tools:ignore="MissingPrefix"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center|left"
+        android:weightSum="10">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:visibility="gone"/>
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="match_parent"
+            android:layout_weight="9"
+            android:gravity="center_horizontal"
+            android:paddingStart="@dimen/margin_3"
+            android:textSize="@dimen/label_hint_textsize"
+            android:text="Work Schedule Preferences"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_daysMark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="MORNING"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            android:visibility="invisible"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="M"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="T"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="W"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="T"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="F"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="S"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="S"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <TextView
+            fontPath="@string/regular_font_path"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="MORNING\n(7 - 12 PM)"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_weekday_textsize"/>
+
+        <ImageView
+            android:id="@+id/monday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/tuesday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/wednesday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/thursday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/friday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/saturday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/sunday_morning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <TextView
+            fontPath="@string/regular_font_path"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="AFTERNOON\n(12 - 5 PM)"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_weekday_textsize"/>
+
+        <ImageView
+            android:id="@+id/monday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/tuesday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/wednesday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/thursday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/friday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/saturday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/sunday_afternoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <TextView
+            fontPath="@string/regular_font_path"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="EVENING\n(5 - 7 PM)"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_weekday_textsize"/>
+
+        <ImageView
+            android:id="@+id/monday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/tuesday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/wednesday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/thursday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/friday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/saturday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+        <ImageView
+            android:id="@+id/sunday_evening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/day2"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

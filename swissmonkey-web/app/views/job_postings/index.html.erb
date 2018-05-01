@@ -1,0 +1,108 @@
+<div id="wrapper">
+  <div id="page-wrapper">
+    <div class="contener-main" style="background: none;">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-jobs">
+        <div class="row">
+
+          <% if @job_postings.empty? %>
+            <div class="no-applicants">
+              <img src="<%= image_tag 'images/no-applicants.png' %>" alt="applicants"/>
+              <div class="clear"></div>
+              <p><strong>You have no jobs Posted yet.<br/>
+                Please post a job. </strong>
+              </p>
+            </div>
+          <% else %>
+            <div class="table-000">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="border-bottom">
+                <thead>
+                <tr class="job-list-head">
+                  <th width="10%" valign="top">
+                    <%= sort_link 'created_at', 'Date Posted' %>
+                  </th>
+                  <th width="15%" valign="top">
+                    Practice Address
+                  </th>
+                  <th width="20%" valign="top">
+                    Position
+                  </th>
+                  <th width="10%" valign="top">
+                    Job Type
+                  </th>
+                  <th width="10%" valign="top">
+                    Applicants
+                  </th>
+                  <th width="15%" valign="top">
+                    Status
+                  </th>
+                </tr>
+
+                </thead>
+                <tbody style="background: #fff;">
+                <% @job_postings.each do |job| %>
+                  <tr>
+                    <td width="10%" valign="middle"><%= job.created_at_pretty %></td>
+                    <td width="15%" valign="middle">
+                      <%= job.company&.name %><br>
+                      <%= job.company_location&.to_s %>
+                    </td>
+                    <td width="20%" valign="middle"><%= job.job_position&.name %></td>
+                    <td width="10%" valign="middle"><%= job.job_type_label %></td>
+                    <td width="10%" valign="middle">
+                      <%= link_to applicants_path(company_id: job.company_id, job_posting_id: job.id) do %>
+                        <button class="btn btn-default view-applicants">
+                          <%= job.job_applications.count %> Applicants
+                        </button>
+                      <% end %>
+                    </td>
+                    <td width="15%" valign="middle">
+
+                      <div class="dropdown">
+
+                        <div class="group">
+                          <button type="button"
+                                  class="group btn btn-default dropdown-toggle status_change"
+                                  aria-expanded="true"
+                                  attr="<%= job.id %>" data-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  style="margin-bottom: 0px;">
+                            <%= job.status_label %><span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu open" aria-expanded="false"
+                              style="min-width:120px">
+                            <% unless job.closed? %>
+                              <li>
+                                <a href="#" data-toggle="modal"
+                                   data-target="#close-job-modal"
+                                   id="status_drop_down"
+                                   atr="<%= job.id %>"> Closed
+                                </a>
+                              </li>
+                            <% end %>
+                            <li>
+                              <%= link_to edit_job_posting_path(job) do %>
+                                <%= job.published? ? 'Unpublished' : 'Published' %>
+                              <% end %>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a href="<%= edit_job_posting_path(job) %>" class="right-arrow">
+                        <%= image_tag 'right-arrow.png', alt: 'View/edit job posting' %>
+                      </a>
+                    </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+            <%= paginate @job_postings, param_name: :page %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render 'close_reason_modal' %>
+
+    <div class="clear"></div>
+  </div>
+</div>

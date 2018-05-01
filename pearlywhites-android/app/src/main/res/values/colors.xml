@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#593E5F</color>
+
+    <color name="black">#000000</color>
+    <color name="blacktran">#71000000</color>
+    <color name="label_textcolor">#848484</color>
+    <color name="label_textcolor2">#7D287D</color>
+    <color name="edittext_textcolor">#1D1D26</color>
+    <color name="textview_textcolor">#1D1D26</color>
+    <color name="statistics_bg">#4B4455</color>
+    <color name="pageTitleColor">#489EAB</color>
+    <color name="header_background_color">#E8EBED</color>
+    <color name="silver">#B3C0C0C0</color>
+    <color name="white">#ffffff</color>
+
+    <color name="purple">#593E5F</color>
+    <color name="purple2">#7d287d</color>
+    <color name="green">#489EAB</color>
+    <color name="blue">#00d5f7</color>
+    <color name="green2">#18d98f</color>
+
+    <color name="header_background">#B3ffffff</color>
+    <color name="notification_circle">#ef0000</color>
+
+    <color name="image_preview_background">#33000000</color>
+
+    <color name="header_background_color_tr">#bfe8ebed</color>
+    <color name="work_day_preferences_bg">#f5f5f5</color>
+
+    <color name="content_background">#f1f2f3</color>
+    <color name="profile_progress_background">#f2e9f2</color>
+    <color name="separator">#d9dbde</color>
+</resources>

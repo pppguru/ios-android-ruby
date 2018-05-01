@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rapidbizapps.swissmonkey.VerifyEmailActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_xxlarge"
+        android:layout_marginRight="@dimen/margin_xxlarge"
+        android:layout_marginTop="@dimen/margin_xlarge">
+
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_onboard" />
+
+        <TextView
+            android:id="@+id/tv_successMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:layout_marginTop="@dimen/margin_large"
+            android:lineSpacingExtra="1.2sp"
+            android:text="@string/register_success_msg"
+            android:textColor="@color/textview_textcolor"
+            android:textSize="@dimen/edittext_textsize" />
+    </RelativeLayout>
+</RelativeLayout>

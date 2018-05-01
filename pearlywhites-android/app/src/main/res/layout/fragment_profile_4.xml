@@ -1,0 +1,259 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/content_background"
+                tools:context="com.rapidbizapps.swissmonkey.fragments.AboutUsFragment"
+                tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/layout_profileImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large">
+
+        <com.rba.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/iv_profileImage"
+                            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_small"
+                    style="@style/edit_text_spinner_container_style">
+                    <com.rba.MaterialEditText
+                        android:id="@+id/et_compensation_preferences"
+                        style="@style/edit_text_spinner_style"
+                        android:drawableEnd="@drawable/dropdown_arrow"
+                        android:hint="Compensation Preferences"
+                        android:inputType="textNoSuggestions"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large">
+
+                    <TextView
+                        style="@style/label_style"
+                        android:text="Expected Salary Range"
+                        android:textColor="@color/label_textcolor"
+                        android:textSize="@dimen/label_hint_textsize"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <LinearLayout
+                        android:clickable="false"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <com.rba.MaterialEditText
+                            android:layout_weight="1"
+                            android:id="@+id/et_expectedSalaryMin"
+                            style="@style/edit_text_normal_style"
+                            android:cursorVisible="false"
+                            android:hint=""
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:maxLength="11"
+                            android:singleLine="true"
+                            android:text="$"/>
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_8"
+                            android:layout_marginRight="@dimen/margin_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/textview_textcolor"
+                            android:textSize="@dimen/header_textsize"
+                            android:text="to" />
+
+
+                        <com.rba.MaterialEditText
+                            android:imeOptions="actionDone"
+                            android:layout_weight="1"
+                            android:id="@+id/et_expectedSalaryMax"
+                            style="@style/edit_text_normal_style"
+                            android:cursorVisible="false"
+                            android:hint=""
+                            android:inputType="numberDecimal"
+                            android:maxLength="11"
+                            android:singleLine="true"
+                            android:text="$"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    style="@style/label_style"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:text="Other"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"
+                    android:layout_gravity="center_horizontal"/>
+
+                <EditText
+                    android:id="@+id/et_otherRequirements"
+                    fontPath="@string/regular_font_path"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_rect_white_bg"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/hintOther"
+                    android:padding="@dimen/padding_large"
+                    android:singleLine="false"
+                    android:textColorHint="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+                <TextView
+                    android:id="@+id/tv_uploadResume"
+                    style="@style/blue_button_style"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:text="UPLOAD RESUME"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/tv_uploadRecommendationLetter"
+                    style="@style/blue_button_style"
+                    android:layout_marginTop="@dimen/margin_40dp"
+                    android:text=" UPLOAD RECOMMENDATIONS"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_40dp"
+                    android:drawablePadding="@dimen/padding_small"
+                    fontPath="@string/regular_font_path"
+                    android:text="@string/additionalInfo"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+                <TextView
+                    android:id="@+id/profile_resumes_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Resumes"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+
+                <LinearLayout
+                    android:id="@+id/resume_photos_group_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:orientation="horizontal">
+
+
+                    <include
+                        android:id="@+id/resume_layout_1"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+
+
+                    <include
+                        android:id="@+id/resume_layout_2"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+
+
+                    <include
+                        android:id="@+id/resume_layout_3"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/resume_photos_group_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/resume_layout_4"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+
+                    <include
+                        android:id="@+id/resume_layout_5"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/profile_recommendation_letters_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Recommendations"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+                <LinearLayout
+                    android:id="@+id/recommendation_photos_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/lor_layout_1"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+
+                    <include
+                        android:id="@+id/lor_layout_2"
+                        layout="@layout/profile_image_layout"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:id="@+id/tandc_cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"/>
+
+                    <TextView
+                        android:id="@+id/show_terms_and_conditions"
+                        fontPath="@string/regular_font_path"
+                        style="@style/label_style"
+                        android:textSize="@dimen/label_hint_textsize"
+                        android:layout_alignBaseline="@id/tandc_cb"
+                        android:layout_toEndOf="@id/tandc_cb"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.rba.ScrollView>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

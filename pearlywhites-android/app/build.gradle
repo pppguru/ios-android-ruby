@@ -1,0 +1,179 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.rba.plugin.rapidRibbonizer'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    useLibrary 'org.apache.http.legacy'
+
+    signingConfigs {
+        debug{
+            storeFile file('../debug.keystore')
+            storePassword'android'
+            keyAlias 'androiddebugkey'
+            keyPassword'android'
+        }
+
+        release{
+            storeFile file('../SwissMonkey.jks')
+            storePassword'r@p1db1z'
+            keyAlias 'SwissMonkey.jks'
+            keyPassword'r@p1db1z'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    defaultConfig {
+        applicationId "com.rapidbizapps.swissmonkey"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 17
+
+        def env = System.getenv()
+
+        if (env['BUILD_NUMBER'] != null) {
+            //If build number available from environment appending to build value in the versionName.
+            versionName "2.0." + env['BUILD_NUMBER']
+        } else {
+            // Build number not available. Build number should be entered manually.
+            versionName "2.0.0"
+        }
+
+        ndk {
+            abiFilter "armeabi-v7a"
+//            abiFilter "x86"
+        }
+    }
+
+
+    buildTypes {
+
+        debug {
+            applicationIdSuffix ".dev"
+            resValue "string", "server_url", "https://swissmonkey-staging.herokuapp.com/api/v1.0"
+            resValue "string", "google_maps_key", "AIzaSyA5yrmV6m0B0PzWcj0-Fg6NKZEl9DaXqOE"
+        }
+
+        qa {
+            applicationIdSuffix ".qa"
+            resValue "string", "server_url", "https://swissmonkey-staging.herokuapp.com/api/v1.0"
+            resValue "string", "google_maps_key", "AIzaSyA5yrmV6m0B0PzWcj0-Fg6NKZEl9DaXqOE"
+
+            signingConfig signingConfigs.debug
+            // using the same config as that of debug. no signing required
+
+            debuggable true //required for ribbonizer
+        }
+        staging {
+            // staging
+            applicationIdSuffix ".staging"
+            resValue "string", "server_url", "https://swissmonkey-staging.herokuapp.com/api/v1.0"
+            resValue "string", "google_maps_key", "AIzaSyA5yrmV6m0B0PzWcj0-Fg6NKZEl9DaXqOE"
+            signingConfig signingConfigs.debug
+
+            debuggable true
+        }
+
+        release {
+            minifyEnabled false
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //production
+            resValue "string", "server_url", "https://swissmonkey-staging.herokuapp.com/api/v1.0"
+            resValue "string", "google_maps_key", "AIzaSyDUwDc-jLZxw2VIieNa_q0o1jAV3yOx_rI"
+
+        }
+
+        //Renaming the file to app and appending build env
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                output.outputFile = file("$project.buildDir/CI/app.apk")
+                output.outputFile = new File(output.outputFile.parentFile,
+                        output.outputFile.name.replace(".apk", "-${variant.versionName}-${variant.buildType.name}.apk"));
+            }
+        }
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+
+    compile project(':materiallibaray')
+    compile project(':ffmpeg4android_lib')
+
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.7@aar') {
+        transitive = true;
+    }
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.flurry.android:analytics:6.2.0'
+    compile 'com.squareup.retrofit:retrofit:1.8.0'
+    compile 'com.jakewharton:butterknife:8.0.1'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    compile 'com.google.code.gson:gson:2.2.+'
+    compile "org.apache.httpcomponents:httpcore:4.4.1"
+    compile "org.apache.httpcomponents:httpmime:4.3.6"
+    compile 'me.grantland:autofittextview:0.2.+'
+}
+
+ribbonizer {
+    // "manifest application[android:icon]" is automatically added to the list
+    iconNames "@drawable/ic_notification", "@drawable/widget_preview"
+
+    builder { variant, iconFile ->
+        if (variant.buildType.name == 'qa')
+            return customRibbonFilter(13, 123, 43, 191, "test", variant, iconFile)
+        else if (variant.buildType.name == 'staging')
+            return customRibbonFilter(23, 33, 43, 191, "staging", variant, iconFile)
+        else
+            return customRibbonFilter(229, 13, 0, 191, variant, iconFile)
+    }
+
+}
+
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

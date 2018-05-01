@@ -1,0 +1,331 @@
+<% content_for :css do %>
+  <style type="text/css">
+    .bgBody {
+      background: url(../images/landing-bg.png) no-repeat center 140px;
+    }
+
+    @media screen and (max-width: 600px) {
+      table[class="container"] {
+        width: 95% !important;
+      }
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+      line-height: 100%;
+    }
+
+    #backgroundTable {
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      line-height: 100% !important;
+    }
+
+    img {
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a img {
+      border: none;
+    }
+
+    .image_fix {
+      display: block;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: black;
+    }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+      color: blue !important;
+    }
+
+    h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+      color: red !important;
+    }
+
+    h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+      color: purple !important;
+    }
+
+    table td {
+      border-collapse: collapse;
+    }
+
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    a {
+      color: #000;
+    }
+
+    @media only screen and (max-device-width: 480px) {
+
+      a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: black; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important; /* or whatever your want */
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        color: #fff; /* or whatever your want */
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      /* Put your iPhone 4g styles in here */
+    }
+
+    @media only screen and (-webkit-device-pixel-ratio: .75) {
+      /* Put CSS for low density (ldpi) Android layouts in here */
+    }
+
+    @media only screen and (-webkit-device-pixel-ratio: 1) {
+      /* Put CSS for medium density (mdpi) Android layouts in here */
+    }
+
+    @media only screen and (-webkit-device-pixel-ratio: 1.5) {
+      /* Put CSS for high density (hdpi) Android layouts in here */
+    }
+
+    /* end Android targeting */
+    h2 {
+      color: #7E287E;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 600;
+    }
+
+    a.link1 {
+
+    }
+
+    a.link2 {
+      color: #fff !important;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    a {
+      color: #fff !important;
+    }
+
+    p {
+      color: #555;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 160%;
+    }
+  </style>
+<% end %>
+<table style="background: url(../images/landing-bg.png) no-repeat center 140px;" cellpadding="0" width="100%" cellspacing="0" border="0" id="backgroundTable" class="bgBody">
+  <tr>
+    <td>
+      <table cellpadding="0" width="620" class="container" align="center" cellspacing="0" border="0">
+        <tr>
+          <td>
+            <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+
+
+            <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+              <tr>
+                <td class="movableContentContainer bgItem">
+
+                  <div class="movableContent">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                      <tr height="40">
+                        <td width="200">&nbsp;</td>
+                        <td width="200">&nbsp;</td>
+                        <td width="200">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td width="200" valign="top">&nbsp;</td>
+                        <td width="200" valign="top" align="center">
+                          <div class="contentEditableContainer contentImageEditable">
+                            <div class="contentEditable" align="center">
+                              <%= image_tag 'logo-lnd-page.png', alt: 'logo' %>
+                            </div>
+                          </div>
+                        </td>
+                        <td width="200" valign="top">&nbsp;</td>
+                      </tr>
+                      <tr height="25">
+                        <td width="200">&nbsp;</td>
+                        <td width="200">&nbsp;</td>
+                        <td width="200">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="movableContent">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                      <tr>
+                        <td width="100%" colspan="3" align="center" style="">
+                          <div class="contentEditableContainer contentTextEditable">
+                            <div class="contentEditable">
+                              <h2>Welcome to Swiss Monkey.</h2>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="100">&nbsp;</td>
+                        <td width="400" align="left">
+                          <div class="contentEditableContainer contentTextEditable">
+                            <div class="contentEditable">
+                              <p style="color: #4D5152; font-size: 14px;line-height: 25px;">
+                                <br/>
+                                <br/>
+                                Thank you for registering with </br> Swiss Monkey. Click on the link below to verify
+                                your profile. This link will be active only for 24 hours.</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td width="100">&nbsp;</td>
+                      </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                      <tr>
+                        <td width="200">&nbsp;</td>
+                        <td width="200" align="center" style="padding-top:25px;">
+                          <table cellpadding="0" cellspacing="0" border="0" align="center" width="200" height="50">
+                            <tr>
+                              <td bgcolor="#7E287E" align="center" style="border-radius:4px;" width="200" height="50">
+                                <div class="contentEditableContainer contentTextEditable">
+                                  <div class="contentEditable" align="center">
+                                    <%= link_to 'Click Here',
+                                                email_verify_url(token: @token),
+                                                class: 'link2',
+                                                style: 'color:#FFF !important; text-decoration: none; font-weight: bold;'
+                                    %>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="200">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </div>
+
+
+                  <div class="movableContent">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+                      <tr>
+                        <td width="100%" colspan="2" style="padding-top:65px;">
+                          <hr style="height:1px;border:none;color:#333;background-color:#ddd;"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="60%" height="70" valign="middle" style="padding-bottom:20px;">
+                          <div class="contentEditableContainer contentTextEditable">
+                            <div class="contentEditable" align='left'>
+                              <div>
+                                <div dir="ltr">
+                                  <div><b><span style="color:rgb(69,129,142);font-size:small">Swiss Monkey</span><br>
+                                  </b></div>
+                                  <div>
+                                    <div style="font-size:12.8px">
+                                      <font size="2"><a href="http://www.swissmonkey.co/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.swissmonkey.co/&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNFjcZbZJ0-FzeANWDw0BqHCe7tOiA">www.swissmonkey.co</a><br>
+                                      </font></div>
+                                    <div style="color:#888888;font-size:12.8px">
+                                      <font size="2">Office: (916) 500-4125</font></div>
+                                    <div style="color:#888888;font-size:12.8px">
+                                      <span style="font-size:small">Fax: (916) 880-5676</span></div>
+                                    <div style="font-size:12.8px">
+                                      <font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small">
+                                        <a href="https://www.facebook.com/swissmonkey.co/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.facebook.com/swissmonkey.co/&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNHrY1qTdzC7917pOcR2UegsfVHuaw" style="color:#888888;">Facebook</a>&nbsp;|</font>
+                                      <font style="color:#888888; font-family:arial,helvetica,sans-serif;font-size:small"></font>
+                                      <a href="https://twitter.com/swissmonkeyinc" style="font-family:arial,helvetica,sans-serif;font-size:small; color:#888888;" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://twitter.com/swissmonkeyinc&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNHPmYJQBjz8cEhKinQnvS2e1OSDYQ">Twitter</a>
+                                      <font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small"></font><font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small">|</font>
+                                      <font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small"></font>
+                                      <a href="https://www.linkedin.com/company/swiss-monkey-inc" style="font-family:arial,helvetica,sans-serif;font-size:small; color:#888888;" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.linkedin.com/company/swiss-monkey-inc&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNFzbY8VT2z10cUYGuiPGGEZW56sNA">LinkedIn</a>
+                                      <span style="font-size:12.8px;color:#888888; "></span>
+                                      <font style="color:#888888; font-family:arial,helvetica,sans-serif;font-size:small">
+                                      </font><font style="color:#888888; font-family:arial,helvetica,sans-serif; font-size:small"><u>
+                                      <a href="https://twitter.com/swissmonkeyinc" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://twitter.com/swissmonkeyinc&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNHPmYJQBjz8cEhKinQnvS2e1OSDYQ" style="color:#888888;">Instagram</a></u></font><br>
+                                    </div>
+                                    <div style="font-size:12.8px"><br>
+                                    </div>
+                                    <div style="font-size:12.8px">
+                                      <img src="https://ci6.googleusercontent.com/proxy/XmcfjqfgY6aLKsJmOTn_XIZt9SX_z2NgAvs4i4dZv1_wabgoKaxdIXVWTafwzXVY1xvk29lh6Yv2JoTVbWflAEbvkjhCwh13K6lqf-bthBZENxxJFO-unvXSRQTHWx8_R80qGXDD14dknPYVdjfo-gHERR05-vqT8rbQDA4yBB0Kxi1Uc_zthDA3_7agbvB8oVxPdOhk7MrUz9g=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B3f1tz-pe0rJSDBBR3N0ZFFVeXc&amp;revid=0B3f1tz-pe0rJQjczMDRLRlducU5CUFM2R3ZkTWVGNUFnb2ZNPQ" width="96" height="96" class="CToWUd"><br>
+                                    </div>
+                                    <div style="font-size:12.8px">
+                                      <i style="font-size:12.8px">"Creating dream teams. One practice at a
+                                        time."</i><br>
+                                    </div>
+                                  </div>
+                                  <div style="font-size:12.8px"><br>
+                                  </div>
+                                  <div style="font-size:12.8px">
+                                    <div dir="ltr">
+                                      <div style="font-size:small"><br>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div><i style="font-size:12.8px"><br>
+                                  </i></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+
+                </td>
+              </tr>
+            </table>
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>

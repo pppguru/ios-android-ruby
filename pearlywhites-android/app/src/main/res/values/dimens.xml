@@ -1,0 +1,46 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">14.4dp</dimen>
+    <dimen name="activity_vertical_margin">14.4dp</dimen>
+
+    <dimen name="margin_xsmall">4.5dp</dimen>
+    <dimen name="margin_3">2.7dp</dimen>
+    <dimen name="margin_8">7.2dp</dimen>
+    <dimen name="margin_small">9dp</dimen>
+    <dimen name="margin_medium">13.5dp</dimen> <!-- 22 px aprox -->
+    <dimen name="margin_large">18dp</dimen> <!-- 32 px aprox  38px = 19dp -->
+    <dimen name="margin_xlarge">22.5dp</dimen>  <!-- 50 px aprox , 46Px = 23 dp -->
+    <dimen name="margin_xxlarge">27dp</dimen> <!-- 58 px aprox -->
+    <dimen name="margin_xxxlarge">27dp</dimen> <!-- 70 px aprox -->
+    <dimen name="margin_40dp">36dp</dimen>      <!-- 80 px aprox -->
+    <dimen name="margin_45dp">40.5dp</dimen>  <!--88px = 44dp -->
+    <dimen name="margin_50dp">45dp</dimen>
+    <dimen name="margin_65">58.5dp</dimen>    <!-- 135 px aprox : 67.5dp-->
+    <dimen name="margin_80">72dp</dimen>
+    <dimen name="margin_90">81dp</dimen>  <!-- 142 px aprox -->
+    <dimen name="margin_100">90dp</dimen>
+
+    <dimen name="padding_xsmall">4.5dp</dimen>
+    <dimen name="padding_small">9dp</dimen>
+    <dimen name="padding_12dp">10.8dp</dimen>
+    <dimen name="padding_medium">13.5dp</dimen>
+    <dimen name="padding_large">18dp</dimen>
+
+    <dimen name="label_hint_textsize">15.0dp</dimen>
+    <dimen name="label_weekday_textsize">10dp</dimen>
+
+    <dimen name="edittext_textsize">25.0dp</dimen>
+    <dimen name="header_textsize">20.0dp</dimen>
+    <dimen name="textsize_16">14.4dp</dimen>
+
+    <dimen name="login_logo_margin_top">15.3dp</dimen>  <!-- 34 px aprox -->
+    <dimen name="login_logo_margin_right">18.9dp</dimen>
+
+    <dimen name="main_heading">14sp</dimen>  <!-- 42 px aprox -->
+    <dimen name="drawable_padding">2dp</dimen>
+
+    <dimen name="practice_padding">2dp</dimen>
+
+    <dimen name="welcome_margin_top">30dp</dimen>
+
+</resources>

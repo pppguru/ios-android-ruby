@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <include layout="@layout/job_header" />
+
+    <include
+        layout="@layout/list_map_strip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <FrameLayout
+        android:id="@+id/results_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/activity_job_results_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/hide_job_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                android:src="@drawable/ic_navigation_close" />
+
+            <LinearLayout
+                android:id="@+id/activity_job_results_clicked_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/hide_job_card"
+                android:orientation="vertical"/>
+        </RelativeLayout>
+    </ScrollView>
+    <!-- <include
+         android:id="@+id/job_detail_window"
+         layout="@layout/job_detail_card"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="bottom"
+         />-->
+
+</LinearLayout>
+
+

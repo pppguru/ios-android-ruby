@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rapidbizapps.swissmonkey.fragments.AboutUsFragment">
+
+    <RelativeLayout
+        android:id="@+id/layout_profileImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_40dp"
+        android:layout_marginTop="@dimen/margin_50dp">
+
+
+        <com.rapidbizapps.swissmonkey.utility.CircleImageView
+            android:id="@+id/iv_profile_picture"
+            android:layout_width="@dimen/margin_100"
+            android:layout_height="@dimen/margin_100"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_large"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/regular_text"
+            android:layout_below="@id/iv_profile_picture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/label_hint_textsize" />
+
+        <TextView
+            android:id="@+id/tv_userName"
+            style="@style/regular_text"
+            android:layout_below="@id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_large"
+            android:text=""
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_completeProfile"
+        style="@style/blue_button_style"
+        android:layout_below="@id/layout_profileImage"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/margin_large"
+        android:text="@string/completeYourprofile" />
+
+    <TextView
+        android:id="@+id/demoText"
+        style="@style/regular_text"
+        android:layout_below="@id/tv_completeProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:gravity="center"
+        android:text="@string/andFindJob" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_small"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_xxxlarge"
+        android:layout_marginRight="@dimen/margin_xxxlarge"
+        android:enabled="false"
+        android:max="20"
+        android:progressDrawable="@drawable/custom_progressbar" />
+
+</RelativeLayout>

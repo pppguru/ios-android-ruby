@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "679093189198",
+    "project_id": "swissmonkeyandroid-e0a62"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679093189198:android:b18f2a1b43396e36",
+        "android_client_info": {
+          "package_name": "com.rapidbizapps.swissmonkey.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAADR58Cq1sYZ5awnXQF8wE_DXy_FV5rVE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

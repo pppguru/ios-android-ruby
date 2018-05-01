@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:ignore="MissingPrefix"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:padding="@dimen/padding_medium"
+        android:background="@drawable/rounded_rect_white_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/job_type"
+                style="@style/label_style"
+                android:text="Job Type"
+                android:textColor="@color/purple2"
+                android:textSize="@dimen/label_hint_textsize"
+                android:textAllCaps="true"
+                fontPath="@string/bold_font_path"
+                />
+
+            <ImageView
+                android:id="@+id/iv_current_location_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/group_4"
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/save_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/love_empty_icon"
+                android:padding="@dimen/padding_small"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/position"
+                style="@style/regular_text"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:text="Dental Assistant"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/textview_textcolor"
+                android:textSize="@dimen/header_textsize"
+                fontPath="@string/bold_font_path"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_xsmall"
+                android:layout_weight="0.75"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/address1"
+                    style="@style/label_style"
+                    android:text="Limo Service"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"
+                    fontPath="@string/bold_font_path"
+                    />
+
+                <TextView
+                    android:id="@+id/city_state"
+                    style="@style/label_style"
+                    android:text="NYC,CA,95505"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_weight="0.75"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    style="@style/label_style"
+                    android:text="Compensation:"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"
+                    fontPath="@string/bold_font_path"
+                    />
+
+                <TextView
+                    android:id="@+id/compensation"
+                    style="@style/label_style"
+                    android:text=""
+                    android:textColor="@color/green2"
+                    android:textSize="@dimen/label_hint_textsize"
+                    fontPath="@string/bold_font_path"
+                    />
+
+                <TextView
+                    android:id="@+id/application_status"
+                    style="@style/label_style"
+                    android:text="Application Status "
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/time_elapsed"
+                style="@style/regular_text"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Posted 0 min ago"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"/>
+
+            <Button
+                android:id="@+id/view_job"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_xxxlarge"
+                android:text="@string/view"
+                android:textColor="@color/purple2"
+                android:textSize="@dimen/header_textsize"
+                android:background="@android:color/transparent"
+                fontPath="@string/bold_font_path"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

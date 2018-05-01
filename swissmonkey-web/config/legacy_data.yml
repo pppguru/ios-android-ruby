@@ -1,0 +1,209 @@
+compensation:
+  1: DAILY
+  2: SALARY
+  3: HOURLY
+  4: OTHER
+job_types:
+  1: FULL_TIME
+  2: PART_TIME
+  4: DAILY
+  5: TEMP
+  6: TEMP_IMMEDIATE
+  7: EXTERNSHIP
+  8: OTHER
+work_availability:
+  1: IMMEDIATE
+  2: AVAILABLE_AFTER_DATE
+miles_range:
+  3: MILES_5
+  4: MILES_10
+  5: MILES_20
+  6: MILES_30
+  7: MILES_40
+  8: MILES_60
+  9: MILES_80
+  10: MILES_100_PLUS
+miles_range_numeric:
+  MILES_5: 5
+  MILES_10: 10
+  MILES_20: 20
+  MILES_30: 30
+  MILES_40: 40
+  MILES_60: 60
+  MILES_80: 80
+  MILES_100_PLUS: 100
+years_experience:
+  1: LESS_THAN_1
+  2: YEARS_1
+  3: YEARS_2
+  4: YEARS_3
+  5: YEARS_4
+  6: YEARS_5
+  7: YEARS_6
+  8: YEARS_7
+  9: YEARS_8
+  10: YEARS_9
+  11: YEARS_10_PLUS
+years_experience_reverse:
+  LESS_THAN_1: 1
+  YEARS_1: 2
+  YEARS_2: 3
+  YEARS_3: 4
+  YEARS_4: 5
+  YEARS_5: 6
+  YEARS_6: 7
+  YEARS_7: 8
+  YEARS_8: 9
+  YEARS_9: 10
+  YEARS_10_PLUS: 11
+years_experience_labels:
+  LESS_THAN_1: Less than 1
+  YEARS_1: 1 Year
+  YEARS_2: 2 Years
+  YEARS_3: 3 Years
+  YEARS_4: 4 Years
+  YEARS_5: 5 Years
+  YEARS_6: 6 Years
+  YEARS_7: 7 Years
+  YEARS_8: 8 Years
+  YEARS_9: 9 Years
+  YEARS_10: 10+ Years
+shifts:
+  1: MORNING
+  2: AFTERNOON
+  3: EVENING
+shifts_reverse:
+  MORNING: 1
+  AFTERNOON: 2
+  EVENING: 3
+datasets:
+  experiences:
+    - experience_range_id: 1
+      experience_range: '0 '
+    - experience_range_id: 2
+      experience_range: 1 Year
+    - experience_range_id: 3
+      experience_range: 2 Years
+    - experience_range_id: 4
+      experience_range: 3 Years
+    - experience_range_id: 5
+      experience_range: 4 Years
+    - experience_range_id: 6
+      experience_range: 5 Years
+    - experience_range_id: 7
+      experience_range: 6 Years
+    - experience_range_id: 8
+      experience_range: 7 Years
+    - experience_range_id: 9
+      experience_range: 8 Years
+    - experience_range_id: 10
+      experience_range: 9 Years
+    - experience_range_id: 11
+      experience_range: 10+ Years
+  work_availability:
+    - work_id: 1
+      work_availabilty_name: Immediate
+      work_availabilty_value: ''
+      order: 0
+      status: ''
+    - work_id: 2
+      work_availabilty_name: Available after
+      work_availabilty_value: ''
+      order: 0
+      status: ''
+  compensation:
+    - compensation_id: 1
+      compensation_name: DAILY
+      compensation_value: "$100"
+      order: 0
+      status: ''
+    - compensation_id: 2
+      compensation_name: SALARY
+      compensation_value: "$1000"
+      order: 0
+      status: ''
+    - compensation_id: 3
+      compensation_name: HOURLY
+      compensation_value: "$10000"
+      order: 0
+      status: ''
+    - compensation_id: 4
+      compensation_name: OTHER
+      compensation_value: ''
+      order: 0
+      status: ''
+  job_types:
+    - job_type_id: 1
+      job_type: Full-time
+    - job_type_id: 2
+      job_type: Part-time
+    - job_type_id: 5
+      job_type: Temporary
+    - job_type_id: 7
+      job_type: Externship
+    - job_type_id: 8
+      job_type: Other
+  shifts:
+    - shift_id: 1
+      shift_timings: 7 - 12PM
+      Shift_name: MORNING
+    - shift_id: 2
+      shift_timings: 12 - 5PM
+      Shift_name: AFTERNOON
+    - shift_id: 3
+      shift_timings: 5 - 7PM
+      Shift_name: EVENING
+  locations:
+    - range_id: 3
+      miles_range: 5 Miles
+      from_range: 0
+      to_range: 5
+    - range_id: 4
+      miles_range: 10 Miles
+      from_range: 0
+      to_range: 10
+    - range_id: 5
+      miles_range: 20 Miles
+      from_range: 0
+      to_range: 20
+    - range_id: 6
+      miles_range: 30 Miles
+      from_range: 0
+      to_range: 30
+    - range_id: 7
+      miles_range: 40 Miles
+      from_range: 0
+      to_range: 40
+    - range_id: 8
+      miles_range: 60 Miles
+      from_range: 0
+      to_range: 60
+    - range_id: 9
+      miles_range: 80 Miles
+      from_range: 0
+      to_range: 80
+    - range_id: 10
+      miles_range: 100+ Miles
+      from_range: 0
+      to_range: 50000
+  states:
+    - state_id: 1
+      state_name: Alabama
+    - state_id: 2
+      state_name: Alaska
+    - state_id: 3
+      state_name: Arizona
+    - state_id: 4
+      state_name: Arkansas
+    - state_id: 5
+      state_name: California
+    - state_id: 6
+      state_name: Colorado
+    - state_id: 7
+      state_name: Connecticut
+    - state_id: 8
+      state_name: Delaware
+    - state_id: 9
+      state_name: Florida
+    - state_id: 10
+      state_name: Georgia

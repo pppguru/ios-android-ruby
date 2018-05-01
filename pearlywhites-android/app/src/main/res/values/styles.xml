@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:screenOrientation">portrait</item>
+
+    </style>
+    
+    <style name="customAlertDialog" parent="AlertDialog.AppCompat">
+        <item name="fontPath">@string/light_font_path</item>
+
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="normal_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontPath">@string/regular_font_path</item>
+    </style>
+
+
+    <!--font without a text size-->
+    <style name="regular_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">@string/light_font_path</item>
+    </style>
+
+
+    <style name="label_style" parent="regular_text">
+        <item name="android:textSize">@dimen/edittext_textsize</item>
+    </style>
+
+    <style name="header_label" parent="regular_text">
+        <item name="android:textSize">@dimen/header_textsize</item>
+    </style>
+
+    <style name="menu_label" parent="regular_text">
+        <item name="fontPath">@string/black_font_path</item>
+    </style>
+
+    <style name="labels">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">@string/bold_font_path</item>
+        <item name="android:textSize">@dimen/edittext_textsize</item>
+    </style>
+
+
+    <style name="weight_adjusted_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontPath">@string/regular_font_path</item>
+    </style>
+
+    <style name="edit_text_normal_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/edittext_textsize</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="met_baseColor">@color/edittext_textcolor</item>
+        <item name="fontPath">@string/light_font_path</item>
+        <item name="met_floatingLabel">highlight</item>
+        <item name="met_floatingLabelPadding">@dimen/padding_xsmall</item>
+        <item name="met_floatingLabelTextSize">@dimen/label_hint_textsize</item>
+        <item name="met_primaryColor">@color/label_textcolor</item>
+        <item name="met_singleLineEllipsis">true</item>
+    </style>
+
+    <style name="edit_text_spinner_style" parent="@style/edit_text_normal_style">
+        <item name="android:drawableEnd">@drawable/dropdown_arrow</item>
+        <item name="android:gravity">start</item>
+        <item name="met_hideUnderline">true</item>
+    </style>
+
+    <style name="edit_text_spinner_container_style">
+        <item name="android:background">@drawable/rounded_rect_white_bg</item>
+    </style>
+
+    <style name="blue_button_style">
+        <item name="android:background">@drawable/rounded_rect_blue_bg</item>
+        <item name="android:textSize">@dimen/label_hint_textsize</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawablePadding">@dimen/padding_small</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/padding_large</item>
+        <item name="android:paddingEnd">@dimen/padding_large</item>
+        <item name="android:paddingTop">@dimen/padding_small</item>
+        <item name="android:paddingBottom">@dimen/padding_small</item>
+    </style>
+
+</resources>

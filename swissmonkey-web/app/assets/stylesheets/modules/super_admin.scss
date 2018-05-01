@@ -1,0 +1,21 @@
+// Place all the styles related to the SuperAdmin controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-form {
+  width: 720px;
+  margin: 0 auto;
+}
+
+// Map rails's field_with_errors class to bootstrap's has-error
+.field_with_errors {
+  @extend .has-error;
+}
+
+.panel-default .panel-body {
+  color: #000;
+}
+
+#public-access-mode input:not(:checked) + #only-checked-in {
+  display: none;
+}

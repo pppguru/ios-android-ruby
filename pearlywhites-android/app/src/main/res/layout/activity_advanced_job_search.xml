@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/layoutContainer"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:baselineAligned="false"
+              android:orientation="vertical"
+              android:weightSum="1"
+              tools:context="com.rapidbizapps.swissmonkey.jobs.AdvancedJobSearchActivity"
+              tools:ignore="MissingPrefix">
+
+    <include layout="@layout/header"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/content_background"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_large"
+        android:paddingRight="@dimen/margin_large"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/select_position_advanced"
+                    style="@style/edit_text_spinner_style"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:hint="@string/select_position_hint"
+                    />
+            </LinearLayout>
+
+            <com.rba.MaterialEditText
+                android:id="@+id/enter_city_advanced"
+                style="@style/edit_text_normal_style"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:hint="@string/enter_zip_code_city"
+                android:inputType="textNoSuggestions"
+                android:gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/label_jobRange"
+                style="@style/regular_text"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/find_a_job_with_in_a_range_of"
+                android:textSize="@dimen/label_hint_textsize"
+                android:layout_gravity="center_horizontal"/>
+
+
+            <LinearLayout
+                android:id="@+id/layout_jobRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/decrement_miles_advanced"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small"
+                    android:src="@drawable/oval_26"/>
+
+                <TextView
+                    android:id="@+id/find_in_range_advanced"
+                    style="@style/regular_text"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:padding="@dimen/padding_xsmall"
+                    android:text="20 miles"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/edittext_textsize"/>
+
+                <ImageView
+                    android:id="@+id/increment_miles_advanced"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small"
+                    android:src="@drawable/plus"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/experience_advanced_search"
+                    style="@style/edit_text_spinner_style"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:hint="@string/experience_hint"
+                    android:visibility="visible"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_large"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/job_type_advanced"
+                    style="@style/edit_text_spinner_style"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:hint="@string/job_type_hint"
+                    android:visibility="visible"
+                    />
+            </LinearLayout>
+
+            <include
+                layout="@layout/weekdays"
+                android:background="@color/image_preview_background"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/compensation_preferences_advanced_search"
+                    style="@style/edit_text_spinner_style"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:hint="Compensation"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:gravity="center_horizontal"
+                android:hint="Compensation Range"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <EditText
+                    android:id="@+id/from_compensation_advanced"
+                    fontPath="@string/regular_font_path"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:maxLength="11"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/edittext_textsize"/>
+
+                <TextView
+                    style="@style/regular_text"
+                    android:text="TO"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+                <EditText
+                    android:id="@+id/to_compensation_advanced"
+                    fontPath="@string/regular_font_path"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:maxLength="11"
+                    android:textSize="@dimen/edittext_textsize"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/findNow_advanced"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/group_14"/>
+
+            <View
+                android:layout_width="@dimen/margin_small"
+                android:layout_height="@dimen/margin_50dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

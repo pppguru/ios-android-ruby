@@ -1,0 +1,18 @@
+// Stylesheets are organized with the SMACSS philosophy.
+//
+// Globals - These are the mixins and variables
+// Base — These are your defaults (html, body, h1, ul, etc)
+// Layout — These divide the page into major sections
+// Modules — These are the reusable modular components of a design
+
+@import 'bootstrap-select';
+@import 'datepicker';
+@import 'rateyo.min';
+
+//import all globals, must be done first
+@import 'globals/all';
+
+//now we can import the rest
+@import 'base';
+@import 'layout';
+@import 'modules/**/*';

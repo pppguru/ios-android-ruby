@@ -1,0 +1,24 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="congoModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border:0;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="my-congrats text-center">
+          <%= image_tag 'congratulations-icon.png', alt: 'congratulations-icon' %>
+          <h2>Congratulations!</h2>
+          <p>You have got <span>100% discount!</span></p>
+        </div>
+      </div>
+      <div class="modal-footer" style="text-align:center !important; border:0;">
+        <p>Note: Posting lasts for 30 days</p>
+        <button type="button" class="btn btn-default cancel-coupon" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary submitBtn" id="congoJob">Publish Job</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

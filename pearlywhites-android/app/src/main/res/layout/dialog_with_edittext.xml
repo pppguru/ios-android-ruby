@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:ignore="MissingPrefix"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            style="@style/regular_text"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="Swiss Monkey"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/header_textsize"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/messageText"
+        style="@style/regular_text"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding_small"
+        android:paddingTop="@dimen/padding_large"
+        android:text="Please enter email address"
+        android:textColor="@color/black"/>
+
+
+    <com.rba.MaterialEditText
+        android:id="@+id/et_email"
+        style="@style/edit_text_normal_style"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/margin_medium"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:minWidth="300dp"
+        app:met_autoscale="true"
+        />
+
+    <LinearLayout
+        android:id="@+id/signUpButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/btOK"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/pageTitleColor"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_textsize"/>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/btCancel"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/pageTitleColor"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_textsize"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

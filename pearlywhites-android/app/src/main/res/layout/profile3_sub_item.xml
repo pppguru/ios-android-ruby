@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--FIXME: The hint has been hard-coded due to technical issues, add it programmatically later-->
+<com.rba.MaterialEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:hint="Specialized Dental Assisting"
+    android:id="@+id/et_additionalSkills"
+    style="@style/edit_text_spinner_style"
+    android:drawablePadding="@dimen/drawable_padding"
+    android:inputType="textNoSuggestions"
+    android:singleLine="true" />

@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">Swiss Monkey</string>
+
+    <!-- RegisterActivity -->
+    <string name="intro_text">Register here to search for jobs.\nIt takes two minutes and it is free! </string>
+
+    <!-- VerifyEmail Activity -->
+    <string name="register_success_msg">Congratulations!\nYou are one step closer to find your perfect job.</string>
+    <string name="register_server_success_msg">Please <u>verify</u> your email to\n sign in to Swiss Monkey.</string>
+
+    <!-- loginActivity -->
+    <string name="register_now">REGISTER NOW</string>
+    <string name="advanced_search">advanced search</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!--About Fragment -->
+    <string name="aboutUsTitle">Hello</string>
+    <string name="aboutUsText">Swiss Monkey makes looking for and posting dental jobs easier. We hope to transform the way dental practices connect with talent in the world. And, of course, how job seekers find and connect with practices.
+        \n\nSwiss Monkey. Helping create dream teams. One practice at a time.</string>
+    <string name="emailUs"><![CDATA[<b>info@swissmonkey.io</b>]]></string>
+    <string name="callUs"><![CDATA[<b>(916) 500–4125</b>]]></string>
+    <string name="alphanumericpattern">qwertzuiopasdfghjklyxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM </string>
+
+    <!-- settings fragment -->
+    <string name="completeYourprofile">Complete your Profile</string>
+    <string name="andFindJob">and\nFind your perfect job</string>
+
+    <!-- profilePic Fragment  -->
+    <string name="optionsDialogTitle">Select your option:</string>
+    <string name="album">Album</string>
+    <string name="camera">Camera</string>
+
+    <string name="desc">Show employers what makes you unique! Some example of video topics include: why you choose this field,
+        a short bio/intro, patient education lesson, treatment planning presentation or even patient testimonials. \nVideos cannot
+exceed 3 minutes.</string>
+
+    <string name="aboutMeHint">Use this space to tell us more about you. For example what makes you unique, your ideal job or why
+    you chose your profession.</string>
+    <string name="licenceExample">(Required for only Dentist, Specialist, Hygenist, RDA, RDAEF)</string>
+    <string name="disclaimer">I verify I am fully certified to practice in the following states and have no violations or
+        restrictions against my license.</string>
+
+    <string name="listOfStates"><u>View the full list of states</u></string>
+    <string name="hintOther">If you have other salary requirements or comments, please include here.</string>
+    <string name="additionalInfo">To share your resume or additional documents please take the picture of the document(s) and upload photo . </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view">view</string>
+    <string name="list_view">LIST VIEW</string>
+    <string name="map_view">MAP VIEW</string>
+    <string name="save">save</string>
+
+    <string name="miles_range">%1d Miles</string>
+    <string name="miles_range2">%1d+ Miles</string>
+    <string name="job_elapsed">Posted %1d days ago</string>
+    <string name="job_type_label">Job Type:</string>
+    <string name="no_jobs_found">No jobs found with this search criteria.Please try with another search criteria</string>
+    <string name="compensation">Compensation: %1s</string>
+    <string name="job_type_hint">Job Type</string>
+    <string name="experience_hint">Experience</string>
+    <string name="select_position_hint">Select Positions</string>
+    <string name="enter_city_zip_hint">ENTER CITY/ ZIP</string>
+    <string name="application_status">Application Status: %1s</string>
+
+
+    <string name="experience_label">Experience:</string>
+    <string name="additional_skills_label">Additional Skills:</string>
+    <string name="languages_label">Languages:</string>
+    <string name="practice_management_system_label">Practice Management System:</string>
+
+    <string name="compensation_type_label">Compensation Type:</string>
+    <string name="compensation_amount_label">Amount:</string>
+    <string name="jobs_not_found">Jobs not found</string>
+    <string name="apply_job_confirmation">Your application will be sent to the employer.Would you like to send it?</string>
+    <string name="already_uploaded">Already uploaded three images</string>
+    <string name="remove_existing_image">Please remove existing image to add a new image</string>
+    <string name="remove_existing_video">Please remove existing video to add a new video</string>
+    <string name="check_internet">Please check your internet connection</string>
+
+
+    <string name="practice_software_experience_label">Practice Software Experience:</string>
+    <string name="language_label">Language:</string>
+    <string name="board_certified_label">Board Certified:</string>
+    <string name="licence_number_label">Licence Number:</string>
+    <string name="expiration_date_label">Expiration Date:</string>
+    <string name="states_label">States:</string>
+    <string name="work_availablity_label">Work Availability:</string>
+    <string name="looking_for_opportunity_within_label">Looking for opportunities within:</string>
+    <string name="compensation_label">Compensation:</string>
+    <string name="expected_salary_label">Expected Salary Range:</string>
+    <string name="enter_zip_code_city">Enter Zip Code/City</string>
+    <string name="view_job"><u>View Job</u></string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="account_deactivated_alert">Your account is deactivated. Do you want to reactivate it?</string>
+    <string name="account_blocked_alert">Your account has been blocked by admin.</string>
+    <string name="complete_profile_alert">We recommend you to complete your profile before searching for better results</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="posted">Posted %1s</string>
+    <string name="no_notifications">No notifications to display</string>
+    <string name="primary_contact_label">Main Contact:</string>
+    <string name="others_label">Others:</string>
+    <string name="allow_permission_storage_prompt">Swiss Monkey doesn\'t have permission to access your storage.Please turn on the permission in your app settings</string>
+    <string name="allow_permission_photo_prompt">Swiss Monkey doesn\'t have permission to access your storage to create photos.Please turn on the permission in your app settings</string>
+    <string name="allow_permission_video_prompt">Swiss Monkey doesn\'t have permission to access your storage to create videos.Please turn on the permission in your app settings</string>
+    <string name="alert_dialog_hieght">210</string>
+    <string name="alert_dialog_hieght_single">150</string>
+    <string name="alert_dialog_margin_top">20</string>
+    <string name="alert_dialog_width_reduce">62</string>
+    <string name="email_already_registered">Email address is already registered</string>
+    <string name="other_label">Other Practice Software Experience:</string>
+    <string name="cannot_delete_check_internet">Cannot delete file now. Please check your internet connection</string>
+    <string name="something_wrong_alert">Something went wrong.Please try later</string>
+
+
+    <string name="regular_font_path">fonts/Lato-Regular.ttf</string>
+    <string name="bold_font_path">fonts/Lato-Bold.ttf</string>
+    <string name="light_font_path">fonts/Lato-Light.ttf</string>
+    <string name="black_font_path">fonts/Lato-Black.ttf</string>
+    <string name="header_font_path">fonts/gishabd.ttf</string>
+    <string name="find_a_job_with_in_a_range_of">Find a Job within a range of</string>
+    <string name="trademark_pending"><![CDATA[Patent & Trademark Pending]]></string>
+
+    <string name="i_agree"><![CDATA[I agree to the Terms of Service & Privacy Policy.]]></string>
+    <string name="terms_of_services"><![CDATA[Terms of Service & Privacy Policy]]></string>
+    <string name="anonymous">ANONYMOUS</string>
+    <string name="practice_info_label">Practice info: %1s</string>
+    <string name="morning_shift_label">7–12PM: %1s</string>
+    <string name="afternoon_shift_label">12–5PM: %1s</string>
+    <string name="evening_shift_label">5–7PM: %1s</string>
+
+</resources>

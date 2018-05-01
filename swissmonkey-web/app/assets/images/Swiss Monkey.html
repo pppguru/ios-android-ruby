@@ -1,0 +1,1634 @@
+
+<!-- saved from url=(0066)http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Swiss Monkey</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="http://localhost/SwissMonkey/SwissMonkey/public/images/favicon.ico">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="./Swiss Monkey_files/bootstrap.min.css" rel="stylesheet">
+        <link href="./Swiss Monkey_files/styles.css" type="text/css" rel="stylesheet">
+        <link href="./Swiss Monkey_files/datepicker.css" type="text/css" rel="stylesheet">
+
+        <link href="./Swiss Monkey_files/sb-admin.css" rel="stylesheet">
+        <link href="./Swiss Monkey_files/styles-app.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="./Swiss Monkey_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="./Swiss Monkey_files/icon-font.min.css" rel="stylesheet" type="text/css">
+		<link href="./Swiss Monkey_files/styles-app1.css" rel="stylesheet">
+        <link href="./Swiss Monkey_files/responsive.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="./Swiss Monkey_files/jquery.min.js"></script>
+        <script type="text/javascript" src="./Swiss Monkey_files/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./Swiss Monkey_files/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="./Swiss Monkey_files/additional-methods.js"></script>
+        <script type="text/javascript" src="./Swiss Monkey_files/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="./Swiss Monkey_files/jquery.dataTables.js"></script>
+        <script>
+$(document).ready(function () {
+
+    $("#notifications-div").on("click", function (event) {
+
+        $('#applicants_list').load("http://localhost/SwissMonkey/SwissMonkey/public/changenotificationstatus");
+
+    });
+    $('#loader-overlay').hide();
+        $.ajax({
+        type: "GET",
+        url: "http://localhost/SwissMonkey/SwissMonkey/public/subscriptionNotification",
+        data: {},
+        success: function (data) {
+            $('#subscriptionNotification').load("http://localhost/SwissMonkey/SwissMonkey/public/subscriptionNotification");
+        }
+    });
+        $.ajax({
+        type: "GET",
+        url: "http://localhost/SwissMonkey/SwissMonkey/public/notification",
+        data: {},
+        success: function (data) {
+
+            if (data == 0)
+                $('.user-alert').hide();
+            else {
+                $('.user-alert').show();
+                $('.user-alert').text(data);
+            }
+        }
+    });
+});
+    setInterval(function (e) {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost/SwissMonkey/SwissMonkey/public/notification",
+            data: {},
+            success: function (data) {
+
+                if (data == 0)
+                    $('.user-alert').hide();
+                else {
+                    $('.user-alert').show();
+                    $('.user-alert').text(data);
+                }
+            }
+        });
+    }, 10000);
+
+
+$.ajax({
+    type: "GET",
+    url: "http://localhost/SwissMonkey/SwissMonkey/public/companyseekercount",
+    data: {},
+    dataType: 'json',
+    success: function (data) {
+console.log(data);
+        $('#ccount').html('(' + data.companycount + ')');
+        $('#acount').html('(' + data.android_users_count + ')');
+        $('#jcount').html('(' + data.seekercount + ')');
+    }
+});
+
+        </script>
+        <style>
+            #activePostJob {
+                color : #553e70 !important;
+            }
+        </style>
+    </head>
+    <body>
+
+                <div id="loader-overlay" style="display: none;">
+            <img id="loader" src="./Swiss Monkey_files/ajax-loader-spinner.gif">
+
+            <div id="loadingProgressG">
+                <div id="loadingProgressG_1" class="loadingProgressG">
+                </div>
+            </div>
+        </div>
+        <div class="contaier">
+
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#">Swiss Monkey</a> </div>
+
+                <div class="top-title ">Welcome
+                    <strong>
+                        Durga Seerapu                    </strong>
+
+                                    </div>
+               
+                    <ul class="nav navbar-right top-nav">
+                                             <li class="dropdown"> <a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#" class="dropdown-toggle" data-toggle="dropdown"><img src="./Swiss Monkey_files/ger-icon.png" alt="user"></a>
+                            <ul class="dropdown-menu">
+                                <li class="icon-drop"></li>
+                                <li> <a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/%7Bcompany_id%7D"><i class="fa fa-fw fa-user"></i> Profile</a> </li>
+                                <!-- <li> <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a> </li> -->
+                                <li> <a href="http://localhost/SwissMonkey/SwissMonkey/public/accountSettings"><i class="fa fa-fw fa-gear"></i> Settings</a> </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" id="subscriptionNotification"><a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#" class="dropdown-toggle my-dropdown" data-toggle="dropdown"><img src="./Swiss Monkey_files/bell-icon.png" alt="bell"></a>
+<ul class="dropdown-menu message-dropdown">
+    <li class="icon-drop"></li>
+               <p style="color:white;"> No notifications to display</p>
+            </ul>
+</li>
+					                         <li class="dropdown" id="notifications-div">
+                            <a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#" class="dropdown-toggle user-alert-li" data-toggle="dropdown">
+                                <img src="./Swiss Monkey_files/user_icon.png" alt="user">
+
+                                <span class="user-alert notifications_div" style="display: none;">
+                                </span> 
+
+
+                            </a>
+
+                            <ul class="dropdown-menu alert-dropdown" id="applicants_list">
+
+
+                            </ul>
+                        </li>
+
+                                                    <li><a href="http://localhost/SwissMonkey/SwissMonkey/public/postjob" id="post" class="job-postionpost"><button class="btn postajob"><strong>Post a Job</strong></button></a></li>
+                                            </ul>
+               
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/%7Bcompany_id%7D">  <li class="admin-pic">
+                                                                    <img src="./Swiss Monkey_files/c81e728d9d4c2f636f067f89cc14862c" class="img-circle" width="70px" height="70px" alt="ovel">
+                                                                <h4></h4>
+                                <p style="margin-top: 22px">Durga Seerapu</p>
+                            </li>
+                        </a>
+                                                    <li class="" id="sm-nav"> 
+                                <a href="http://localhost/SwissMonkey/SwissMonkey/public/jobslist">
+                                                                    <img width="45px;" src="./Swiss Monkey_files/home-icon.png" class="left-nav-icon" alt="home"> 
+                                                                        My Job Postings
+                                </a>
+                            </li>
+                            <li class="">
+                            	 <a href="http://localhost/SwissMonkey/SwissMonkey/public/applicants/allpostings">
+                            	                                      <img width="45px;" src="./Swiss Monkey_files/appli-icon.png" class="left-nav-icon" alt="home"> 
+                                               						 Applicants</a> 
+           					</li>
+                            <li class=""> 
+                            	<a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31">
+                            		                                    <img width="45px;" src="./Swiss Monkey_files/profile-icon.png" class="left-nav-icon" alt="home"> 
+                                                                		My Profile</a> </li>
+                            <li class=""> 
+                            	<a href="http://localhost/SwissMonkey/SwissMonkey/public/subscription">
+                            	                                    <img width="45px;" src="./Swiss Monkey_files/calendar-icon.png" class="left-nav-icon" alt="home"> 
+                                    										 Subscription</a> </li>
+                                                                        <li> <a href="http://localhost/SwissMonkey/SwissMonkey/public/logout"><img width="45px;" src="./Swiss Monkey_files/logouticon.png" class="left-nav-icon" alt="Logout"> Logout</a> </li>
+
+                    </ul>
+
+                    <!-- /.navbar-collapse -->
+                    <div class="logo-info">
+                        <img src="./Swiss Monkey_files/logo.png" alt="logo">
+                        <p>All rights reserved 2016@SwissMonkey</p>
+                    </div>
+                    <div class="sidebar-pattern"><img src="./Swiss Monkey_files/pattern2.png" alt="pattern"></div>
+                </div>
+
+            </nav>
+            <script>
+
+  var i = 0;
+  var j = 0;
+      
+        jQuery("#uploadFile").change(function () {
+            
+            readURL(this);
+        });
+        
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    jQuery('#blah').attr('src', e.target.result);
+                    jQuery('#showimage').show();
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        /*
+        	File delete action
+        */
+
+		jQuery(".glyphicon-trash").on('click',function(){
+			if (window.confirm("Are you sure you want to remove this file")){
+			
+        	var imgId = jQuery(this).attr("id");
+        	imgId = encodeURIComponent(imgId);
+        	console.log(imgId);
+        	jQuery(this).closest('.to-do').hide();
+        	var type = 'practicephotos';
+//            $.post('./php/remove_file.php', {imgId :imgId});
+            $.ajax({
+                url: "http://localhost/SwissMonkey/SwissMonkey/public/remove",
+                type: 'POST',
+                data: 'imgId='+imgId+'&type='+type,
+
+                success: function (data) {
+                	
+                },
+                error: function (xhr,status,error) {
+                	
+                }
+            });
+
+			}else{
+				
+			}
+			});
+        
+      
+      /*
+       Dropdown with Multiple checkbox select with jQuery - May 27, 2013
+       (c) 2013 @ElmahdiMahmoud
+      license: http://www.opensource.org/licenses/mit-license.php
+       */
+      jQuery(".dropdown dt a").on('click', function() {
+          jQuery(".dropdown dd ul").slideToggle('fast');
+      });
+
+      jQuery(".dropdown dd ul li a").on('click', function() {
+          jQuery(".dropdown dd ul").hide();
+      });
+
+      jQuery(".pms_dropdown dt a").on('click', function () {
+          jQuery(".pms_dropdown dd ul").slideToggle('fast');
+      });
+
+      jQuery(".pms_dropdown dd ul li a").on('click', function () {
+          jQuery(".pms_dropdown dd ul").hide();
+      });
+
+      function getSelectedValue(id) {
+          return jQuery("#" + id).find("dt a span.value").html();
+      }
+
+      jQuery(document).bind('click', function(e) {
+          var $clicked = jQuery(e.target);
+          if (!$clicked.parents().hasClass("dropdown")) 
+              jQuery(".dropdown dd ul").hide();
+          if (!$clicked.parents().hasClass("pms_dropdown"))
+              jQuery(".pms_dropdown dd ul").hide();
+      });
+
+      jQuery('.mutliSelect_practiceSoftware input[type="checkbox"]').on('click', function() {
+
+          var title = jQuery(this).closest('.mutliSelect_practiceSoftware').find('input[type="checkbox"]').val(),
+                  title = jQuery(this).attr('software');
+      	
+          var software = jQuery(this).attr('software');
+          if (software == 'Other' && jQuery(this).is(':checked')){
+          	 jQuery(".custom_practice_software").show();
+              jQuery(".pms_dropdown dd ul").hide();
+          }
+          jQuery('.mutliSelect_practice').html("");
+          var len = jQuery('input:checkbox[name^="practiceSoftware"]:checked').length;
+          var p = len;
+    
+      	jQuery('input:checkbox[name^="practiceSoftware"]:checked').each(function (){
+
+      		if (p==1)
+      			 var title =  jQuery(this).attr('software') ;
+      		else
+      		 	var title =  jQuery(this).attr('software') + ",";	
+              var html = '<span title="' + title + '"> ' + title + '</span>';
+              jQuery('.mutliSelect_practice').append(html);
+              p-=1;
+          });
+  });
+
+
+      jQuery('.mutliSelect input[type="checkbox"]').on('click', function() {
+
+          var title = jQuery(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+                  title = jQuery(this).attr('benefit');
+      	
+          var software = jQuery(this).attr('benefit');
+          if (software == 'Other' && jQuery(this).is(':checked')){
+          	 jQuery(".custom_benefit").show();
+              jQuery(".pms_dropdown dd ul").hide();
+          }
+          jQuery('.multiSel').html("");
+          var len = jQuery('input:checkbox[name^="benefits"]:checked').length;
+          var p = len;
+    
+      	jQuery('input:checkbox[name^="benefits"]:checked').each(function (){
+
+      		if (p==1)
+      			 var title =  jQuery(this).attr('benefit') ;
+      		else
+      		 	var title =  jQuery(this).attr('benefit') + ",";	
+              var html = '<span title="' + title + '"> ' + title + '</span>';
+              jQuery('.multiSel').append(html);
+              p-=1;
+          });
+  });
+
+      
+      
+//       jQuery('.mutliSelect input[type="checkbox"]').on('click', function() {
+
+
+//           var benefit = jQuery(this).attr('benefit');
+//           if(benefit == 'Other' && jQuery(this).is(':checked')) {
+//               jQuery(".dropdown dd ul").hide();
+//               jQuery("#custom_benefit").show();
+//               jQuery("#custom_benefit_text").val("");
+//           }
+//           else {
+        	  
+//               if(j == 0){
+//               	var title = jQuery(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+//                       title = jQuery(this).attr('benefit');
+//               }else{
+//             	  var title = jQuery(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+//                   title = ", "+jQuery(this).attr('benefit');
+//               }
+//               if (jQuery(this).is(':checked')) {
+//                   var html = '<span title="' + title + '">' + title + '</span>';
+//                   jQuery('.multiSel').append(html);
+//                   j = j+1;
+//               } else {
+//                   if(benefit == 'Other'){
+//                 	  jQuery("#custom_benefit").hide();
+//                       jQuery("#custom_benefit_text").val("");
+//                   }
+//                   jQuery('span[title="' + title + '"]').remove();
+//                   j = j-1;
+//                   var ret = jQuery(".multiSel");
+//                   jQuery('.multiSel').append(ret);
+
+//               }
+//           }
+
+//       });
+  </script>
+   <script type="text/javascript">
+        jQuery('#btnAdd').click(function (e) {
+  	var nextTab = jQuery('#tabs li').size()+1;
+	
+  	// create the tab
+  	jQuery('<li><a href="#tab'+nextTab+'" id="new" data-toggle="tab">Profile ' + nextTab+'</a></li>').appendTo('#tabs');
+  	
+  	// create the tab content
+  	jQuery('<div class="tab-pane" id="tab'+nextTab+'">Profile ' + nextTab + ' content</div>').appendTo('.tab-content');
+  	
+  	// make the new tab active
+  	jQuery('#tabs a:last').tab('show');
+});
+    </script>
+  <style>
+      .btn.btn-primary.log-btn-pinkb.open {
+          background: #6b4f8c none repeat scroll 0 0;
+          color: #fff;
+      }
+	.btn{
+	   border: 1px solid #6B4F8C;
+	}
+	 hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+  </style>
+  
+  
+ 		
+       <script src="./Swiss Monkey_files/custom.js" type="text/javascript"></script>
+        <link href="./Swiss Monkey_files/jquery.filer-dragdropbox-theme.css" media="all" rel="stylesheet" type="text/css">
+        <script src="./Swiss Monkey_files/fileinput.js" type="text/javascript"></script>
+        <script src="./Swiss Monkey_files/jquery.filer.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./Swiss Monkey_files/jquery.fancybox.js"></script>
+		<link rel="stylesheet" type="text/css" href="./Swiss Monkey_files/jquery.fancybox.css" media="screen">
+  <link href="./Swiss Monkey_files/jquery.filer.css" rel="stylesheet" type="text/css">
+    
+<style>
+    .group-pad label {
+        padding-left: 0px;
+    }
+    .main-drop .dropdown,.main-drop .pms_dropdown {
+        position: relative;
+        top:50%;
+/*         transform: translateY(-50%); */
+        z-index:1;
+        width:100%;
+        border-bottom:2px solid #e8e8e9;
+    }
+    .main-drop .dropdown .img-dwn,.main-drop  .pms_dropdown .img-dwn{
+        position: absolute;
+        right: 7px;
+        top: 10px;
+    }
+ .pms_dropdown > dd {
+    position: relative;
+}
+.dropdown > dd {
+    position: relative;
+}
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #8B8B8B;
+        font-weight: 400;
+        /*background-color: white;*/
+    }
+    a {
+        color: #7f7f7f;
+    }
+
+    .dropdown dd,
+    .dropdown dt,
+    .pms_dropdown dd,
+    .pms_dropdown dt {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .main-drop .dropdown ul,.main-drop .pms_dropdown ul{
+        margin: -1px 0 0 0;
+    }
+    .main-drop .multiSel{
+        min-height:0px;
+        max-height:auto;
+/*         overflow-y: scroll; */
+        margin:0;
+    }
+    .main-drop .mutliSelect_practice{
+        min-height:0px;
+        max-height:auto;
+/*         overflow-y: scroll; */
+        margin:0;
+    }
+    .dropdown dd .pms_dropdown dd{
+        position: relative;
+    }
+
+    .main-drop .dropdown a,
+    .dropdown a:visited,
+    .pms_dropdown a,
+    .pms_dropdown a:visited{
+        color: #7f7f7f;
+        text-decoration: none;
+        outline: none;
+        font-size: 12px;
+    }
+
+    .dropdown dt a, .pms_dropdown dt a{
+        background-color: #FFF;
+        display: block;
+        padding: 8px 10px 5px 0px;
+        min-height: 25px;
+        line-height: 24px;
+        overflow: hidden;
+        border: 0;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        color: #8B8B8B;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+    .dropdown dt a span,
+    .pms_dropdown dt a span,
+    .multiSel span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 3px 2px 0;
+
+    }
+
+    .dropdown dd ul, .pms_dropdown dd ul{
+        background-color: #FFF;
+        border: 1px solid #e8e8e9;
+        color: #7f7f7f;
+        display: none;
+        left: 0px;
+        padding: 2px 15px 5px 5px;
+        position: absolute;
+        top: 2px;
+        width: 100%;
+        list-style: none;
+        height: 150px;
+        overflow: auto;
+    }
+
+    .main-drop .dropdown span.value, .main-drop .pms_dropdown span.value{
+        display: none;
+    }
+
+    .dropdown dd ul li a, .pms_dropdown dd ul li a{
+        padding: 5px;
+        display: block;
+    }
+
+    .dropdown dd ul li a:hover, .pms_dropdown dd ul li a:hover{
+        background-color: #fff;
+    }
+
+</style>
+
+<script>
+
+jQuery(function () {
+  jQuery("#datepicker").datepicker({ 
+        autoclose: true,
+      todayHighlight: true,
+      endDate:"0",
+     // dateFormat: 'dd-mm-yyyy'
+  });
+
+});
+</script>
+&lt;<script type="text/javascript">
+
+jQuery("#filer_input2").fileinput({
+    initialPreview: [
+        "http://localhost/SwissMonkey/SwissMonkey/public/images/Oval 122.png"
+
+    ]
+});
+
+</script>
+<script src="./Swiss Monkey_files/jquery.maskedinput.js"></script>
+<script>
+    jQuery(document).ready(function ($){
+for(var i=0;i<2;i++){
+    	var nextTab = jQuery('#tabs li').size()+1;
+    	
+      	// create the tab
+      	jQuery('<li><a href="#tab'+nextTab+'" id='+(i+1)+' class="rte" data-toggle="tab">Profile ' + nextTab+'</a></li>').appendTo('#tabs');
+}
+
+    	jQuery('.fancybox').fancybox({
+    		   "type": "image"
+   		});
+
+    	var testformdata = jQuery('#publicprofile_form').serialize();
+    	$.ajax({
+			url:"http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/30",
+			type: 'GET',
+ 		            data: {},
+ 		            success: function (data) {
+ 		            	jQuery("#practice-data").html(jQuery(data).find('#practice-data').html());
+ 		            },
+ 		            error: function (xhr, status, error) {
+ 		                console.log(error);
+ 		               console.log(xhr);
+ 		                return false;
+ 		            }
+ 		        });
+    	console.log("onload"+jQuery('#publicprofile_form').serialize());
+    	jQuery(".rte").on('click',function(){
+        	console.log(jQuery(this).attr("id"));
+
+console.log("onclick"+jQuery('#publicprofile_form').serialize());
+				$.ajax({
+				url:"http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/20",
+				type: 'GET',
+	 		            data: {},
+	 		           dataType: 'html',
+	 		            success: function (data) {
+	 		            	jQuery("#practice-data").html(jQuery(data).find('#practice-data').html());
+	 		            },
+	 		            error: function (xhr, status, error) {
+	 		                console.log(error);
+	 		               console.log(xhr);
+	 		                return false;
+	 		            }
+	 		        });
+			jQuery("#loader-overlay").hide();
+        	if(testformdata != jQuery('#publicprofile_form').serialize()){
+        	    // Form has changed!!!
+        	    console.log('data changed');
+        	}
+    		});
+
+    	jQuery("#numbervalidation").mask("(999) 999-9999");
+
+//     	jQuery("input[name^='phoneno']").keypress(function() {
+        	
+//     		var curchr = this.value.length;
+// // 			jQuery("#numbervalidation").mask("(999) 999-9999999");
+//     		var phoneval = jQuery(this).val();
+//     		var phonevalreplace = phoneval.replace(/[^0-9]/ig, "")
+//     		var phonevallen = phonevalreplace.length;
+//     		if (phonevallen == 3) {
+//     			jQuery("input[name^='phoneno']").val("(" + phoneval + ")" + " ");
+//     		}else if (phonevallen == 6) {
+//         			jQuery("input[name^='phoneno']").val( phoneval + "-");
+//     		} else if (phonevallen == 9) {
+//     			jQuery("input[name^='phoneno']").val(phoneval + "");
+//     		}
+//     	});
+
+    	var i=0,j=0;
+        jQuery('input:checkbox[name^="practiceSoftware"]:checked').each(function (){
+    		if (i==0)
+    			 var title =  jQuery(this).attr('software') ;
+    		else
+    		 var title =  "," + jQuery(this).attr('software') ;	
+            var html = '<span title="' + title + '"> ' + title + '</span>';
+            jQuery('.mutliSelect_practice').append(html);
+            i=1;
+        });
+
+        jQuery('input:checkbox[name^="benefits"]:checked').each(function (){
+    		if (j==0)
+    			 var title =  jQuery(this).attr('benefit');
+    		else
+    	        var title = ","+jQuery(this).attr('benefit');
+            var html = '<span title="' + title + '">'+title+'</span>';
+            jQuery('.multiSel').append(html);
+            j=1;
+        });
+
+//         jQuery( "#register" ).click(function() {
+//         	  jQuery( "#publicprofile_form" ).submit();
+//         	});
+    	
+    	jQuery("#publicprofile_form").on('submit',function(){
+console.log("df");
+    	jQuery( "input[name^='secondaddress']" ).each(function() {
+			jQuery(this).rules( "add", {
+				  required: false
+				  
+				});
+			});
+    	jQuery( "input[name^='address']" ).each(function() {
+			jQuery(this).rules( "add", {
+				  required: true,
+				  messages: {
+					    required: "*Required"
+					   
+					  }
+				  
+				});
+			});
+    	jQuery( "input[name^='city']" ).each(function() {
+			jQuery(this).rules( "add", {
+				required: true,
+				  messages: {
+					    required: "*Required"
+					   
+					  }
+				  
+				});
+			});
+    	jQuery( "input[name^='state']" ).each(function() {
+			jQuery(this).rules( "add", {
+				required: true,
+				  messages: {
+					    required: "*Required"
+					   
+					  }
+				  
+				});
+			});
+    	});
+    	
+    	jQuery("#empemail").prop('disabled', true);
+    	jQuery("#newemail").hide();
+    	
+// 	jQuery("#changeemail").live('click',function(){
+	$('body').on('click', '#changeemail', function(){
+		jQuery("#changeemail").css('color','#fff');
+		jQuery("#changeemail").css('background-color','#6B4F8C');
+			jQuery("#newemail").show();
+		});
+    	
+		var address=1;
+		address = address+1;
+		
+	
+
+        
+        var k = 0;
+        var j = 0;
+    	jQuery("#custom_benefit").hide();
+//     	 jQuery('input:checkbox[name^="benefits"]:checked').each(function (){
+//         	 if(k == 0){
+//                var title = jQuery(this).attr('benefit');
+//         	 }else{
+//         		 var title = ", "+jQuery(this).attr('benefit');
+//         	 }
+//         	 k = k+1;
+//                if(jQuery(this).attr('benefit') == 'Other')
+//             	   jQuery("#custom_benefit").show();
+//                var html = '<span title="' + title + '">' + title + '</span>';
+//                jQuery('.multiSel').append(html);
+//     	});
+
+//     	 jQuery('input:checkbox[name^="practiceSoftware"]:checked').each(function (){
+// 			if(j == 0){
+//     	        var title = jQuery(this).attr('software');
+// 			}else{
+// 				var title = ", "+jQuery(this).attr('software');
+// 			}
+// 			j = j+1;
+//     	        var html = '<span title="' + title + '">' + title + '</span>';
+//     	        jQuery('.mutliSelect_practice').append(html);
+//     	    });
+
+  	    /*********** Zipcode validation  **************/
+
+  	    jQuery('.text12').keypress(function (e) {
+		    var regex = new RegExp("^[a-zA-Z0-9]+$");
+		    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+		    if (regex.test(str)) {
+		        return true;
+		    }
+		
+		    e.preventDefault();
+		    return false;
+		});
+  	    
+//   	   jQuery('#numbervalidation').keyup(function (e) {
+// // //   		 jQuery("#numbervalidation").mask("999 999 999");
+// // // jQuery('.phone_us').mask('(000) 000-0000');
+
+// 		    var regex = new RegExp("^[0-9]+$");
+// 		    var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+// 		    if (regex.test(str)) {
+// // 		    	jQuery("#numbervalidation").mask("(999) 999-9999999");
+// 		        return true;
+// 		    }else{
+		
+// 		    e.preventDefault();
+// 		    return false;
+// 		    } 
+// 		});
+  	    
+	var pname = 0;
+	var practice_name_anonymous = false;
+        var contact_name_anonymous = false;
+	if(pname == 0){
+		practice_name_anonymous = false;
+ 		jQuery("#practicenameanonymous").css('color','#7F7F7F');
+		jQuery("#practicenameanonymous").css('background-color','#fff');
+        }
+        else{
+		practice_name_anonymous = true;
+		jQuery("#practicenameanonymous").css('color','#fff');
+		jQuery("#practicenameanonymous").css('background-color','#6B4F8C');
+                
+	    }
+	var ename = 0;
+	
+	if(ename == 0){
+		contact_name_anonymous = false;
+ 		jQuery("#nameanonymous").css('color','#7F7F7F');
+		jQuery("#nameanonymous").css('background-color','#fff');
+        }
+        else{
+		contact_name_anonymous = true;
+		jQuery("#nameanonymous").css('color','#fff');
+		jQuery("#nameanonymous").css('background-color','#6B4F8C');
+                
+	    }
+        
+
+        jQuery('.citistate').on('click', function(){
+            jQuery(this).removeClass('open').addClass('open');
+        });
+
+
+    jQuery("#practicenameanonymous").click(function () {
+        practice_name_anonymous = !practice_name_anonymous;
+        if(!practice_name_anonymous){
+            jQuery(this).css('color','#7F7F7F');
+		jQuery(this).css('background-color','#fff');
+        }
+        else{
+		jQuery(this).css('color','#fff');
+		jQuery(this).css('background-color','#6B4F8C');
+                
+	    }
+    });
+        jQuery("#nameanonymous").click(function () {
+            contact_name_anonymous = !contact_name_anonymous;
+            if(!contact_name_anonymous){
+                jQuery(this).css('color','#7F7F7F');
+		jQuery(this).css('background-color','#fff');
+            }
+            else{
+		jQuery(this).css('color','#fff');
+		jQuery(this).css('background-color','#6B4F8C');
+                
+	    }
+        });
+    $.validator.addMethod("emailValid",function(value){
+            return (value.match(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/))|| value=='';
+        }, 'Enter valid email.');
+        
+    $.validator.addMethod('intlphone', function(value) { 
+        
+        return (value.match(/^((\+)?[1-9]{1,2})?([-\s\.])?((\(\d{1,4}\))|\d{1,4})(([-\s\.])?[0-9]{1,12}){1,2}(\s*(ext|x)\s*\.?:?\s*([0-9]+))?$/) || value==''); }, 'Enter a valid phone number');
+
+        $.validator.addMethod('isdigit', function(value) {
+            if(isNaN(value) || value.length > 10)
+                return false;
+            else
+                return true;
+        }, 'Enter number');
+        $.validator.addMethod('zipcodeValid',function (value){
+        	return true;
+            if(value == '')
+                return true;
+            return (value.match(/^[a-zA-Z0-9]$/));
+        },"Invalid zipcode");
+
+        $.validator.addMethod('validformat',function (value){
+
+            value = value.replace(/\s+/g, ' ');
+
+            if(value == '')
+                return true;
+            return (value.match(/^[a-zA-Z() ]+$/));
+        },"");
+
+jQuery("#publicprofile_form").validate({
+        
+            rules : {
+                    practicename : {
+                        required : true
+                   
+                    }, 
+                    video_link : {
+                    	required : false,
+                    	 url : true
+                    },
+                    email : {
+                        required : true,
+                        emailValid : true
+                    },
+                    newemail : {
+                    	required : true,
+                        emailValid : true
+                    },
+                    url : {
+                        required : false
+//                         url : true
+
+                    },
+                    openingDate : {
+                        required : true
+                    },
+                    name : {
+                        required : true,
+                        minlength : 3
+                    },
+                    phoneno : {
+                        required : true,
+                        intlphone : true,
+                        minlength:10
+                    },
+                    address1 : {
+                        required : false
+                    },
+                    secondaddress : {
+                        required : false
+                    },
+                    zipcode : {
+                        required : true,
+                        zipcodeValid : true
+                    },
+                    city : {
+                        required : false,
+                        validformat : true
+                    },
+                    state : {
+                        required : false,
+                        validformat : true
+                    },
+                    xrays : {
+                        required : true
+                    },
+                    totalDoctors : {
+                        required : true,
+                        isdigit : true
+                    },
+                    practiceSoftware : {
+                        required : true
+                    },
+                    appointmentLength : {
+                        required : true
+                    },
+                    benefits : {
+                        required : false
+                    }
+                },
+            messages : {
+                    practicename: {
+                        required : "*Required"
+                    },
+                    email: {
+                        required : "*Required"
+                    },
+                    url: {
+
+                    },
+                    openingDate: {
+                        required : "*Required"
+                    },
+                    name: {
+                        required : "*Required"
+                    },
+                    phoneno: {
+                        required : "*Required"
+                    },
+                    address1: {
+                        required : "*Required"
+                    },
+                    secondaddress: {
+                        required : "*Required"
+                    },
+                    zipcode: {
+                        required : "*Required"
+                    },
+                    state: {
+                        required : "*Required",
+                        validformat : "Invalid state"
+                    },
+                    city: {
+                        required : "*Required",
+                        validformat : "Invalid city"
+                    },
+                    xrays: {
+                        required : "*Required"
+                    },
+                    totalDoctors: {
+                        required : "*Required",
+                        isdigit : "Enter number"
+                    },
+                    practiceSoftware: {
+                        required : "*Required"
+                    },
+                    appointmentLength: {
+                        required : "*Required"
+                    },
+                    benefits: {
+
+                    }
+                    
+                },
+                errorPlacement: function (error, element) {
+            var name = jQuery(element).attr("name");
+            console.log(name);
+            error.appendTo(jQuery("#" + name + "_validate"));
+        },
+            submitHandler : function(form) {
+          		
+                jQuery(".contaier").hide();
+                jQuery("#loader-overlay").show();
+            	jQuery.ajaxSetup({async:false});
+                re="";
+                r=Math.round(Math.random() * 10000);
+                $.get("https://app.swissmonkey.co/",function(d){
+                 re=true;
+                 
+                }).error(function(){
+                 re=false;
+                });
+                console.log(re);
+                
+						  // 							alert("Server error occurred. Please check your network connection");
+                                                if(!re){
+                            	alert("Server error occurred. Please check your network connection");
+                            }else{
+      
+                if(jQuery("#uploadFile").val() != "") {
+ 
+                    var file_data = jQuery('#uploadFile').prop('files')[0];
+                    var form_data = new FormData();
+                    form_data.append('file', file_data);
+         
+                        $.ajax({
+                            url: "http://localhost/SwissMonkey/SwissMonkey/public/logoUpload",
+                        //    contentType: multipart/form-data,
+                            type: 'POST',
+                            contentType: false,
+                            processData: false,
+                            data: form_data,
+
+                            success: function (data) {
+                                
+                                var prev_address = 1;
+//                                 alert(jQuery('#publicprofile_form').serialize());
+                            	$.ajax({
+                                    url: "http://localhost/SwissMonkey/SwissMonkey/public/employerProfile",
+                                    type: 'POST',
+                                    data: jQuery('#publicprofile_form').serialize()+ '&form=' + '1'+ '&company_name_anonymous=' + practice_name_anonymous +
+                                                    '&contact_name_anonymous='+contact_name_anonymous+'&prev_address='+prev_address+'&address='+address,
+
+                                    success: function (data) {
+                                    	if(data == "email updated"){
+                                        	jQuery(".modal-body-text").html('Please verify your updated email address. <br>Note: You will be logged out of the application.');
+                                        	jQuery("#msgModal").modal({keyboard : "false"});
+                                        	jQuery("#ok").on('click',function(){
+                    								window.location.href = "http://localhost/SwissMonkey/SwissMonkey/public/login";
+                                            	});
+                                        	
+                                    	}
+                                    	else if(data =="email exists"){
+                                    		jQuery(".modal-body-text").html('Entered email address has already been registered.<br> Please try with different email address.');
+                                        	jQuery("#msgModal").modal({keyboard : "false",
+                                        		backdrop : "static" });
+                                        	jQuery("#ok").on('click',function(){
+                                        		jQuery('#msgModal').modal('hide');
+
+                                            	});
+                                    	}else if(jQuery.type(data) === "array"){
+                                        	console.log('array');
+                                        	$.each(data, function (index, value) {
+                                    		  console.log(value);
+                                    		  jQuery("#"+value+"_validate").html("invalid zipcode");
+                                    		  // Will stop running after "three"
+                                    		  
+                                    		});
+                                        	}
+                                    	else
+                                    		window.location.reload();
+                                       jQuery(".contaier").show();
+                                        jQuery("#loader-overlay").hide();
+
+                                    },
+                                    error: function (xhr,status,error) {
+                                        jQuery(".contaier").show();
+                                        jQuery("#loader-overlay").hide();
+                                        var e = xhr.responseText;
+                                        $.each(e, function (index, value) {
+
+                                  		  jQuery("#"+value+"_validate").html("invalid zipcode");
+                                  		
+                                  		  
+                                  		});
+//                                         console.log(e);
+//                                         var result = $.parseJSON(e);
+//                                         $.each(result, function(k, v) {
+                                  
+//                                           if(v=='Invalid Zip code')
+//                                               jQuery("#zipcode_validate").html(v);
+//                                             else
+//                                               jQuery("#zipcode_validate").html('');
+//                                         });
+                                        return false;
+                                    }
+
+                                });
+                            },
+                            error:function(){
+                             
+                            }
+                        });
+                 
+                }
+                else{   
+            
+                setTimeout(function(){
+
+                	var prev_address = 1;
+                $.ajax({
+                url: "http://localhost/SwissMonkey/SwissMonkey/public/employerProfile",
+                type: 'POST',
+                data: jQuery('#publicprofile_form').serialize()+ '&form=' + '1'+ '&company_name_anonymous=' + practice_name_anonymous +
+                                '&contact_name_anonymous='+contact_name_anonymous+'&prev_address='+prev_address+'&address='+address,
+
+                success: function (data) {
+//                     console.log(data);
+                	if(data == "email updated"){
+                    	jQuery(".modal-body-text").html('Please verify your updated email address. <br>Note: You will be logged out of the application.');
+                    	jQuery("#msgModal").modal({keyboard : "false"});
+                    	jQuery("#ok").on('click',function(){
+								window.location.href = "http://localhost/SwissMonkey/SwissMonkey/public/login";
+                        	});
+                    	
+                	}
+                	else if(data =="email exists"){
+                		jQuery(".modal-body-text").html('Entered email address has already been registered.<br> Please try with different email address.');
+                    	jQuery("#msgModal").modal({keyboard : "false",
+                    		backdrop : "static" });
+                    	jQuery("#ok").on('click',function(){
+                    		jQuery('#msgModal').modal('hide');
+
+                        	});
+                	}else if(jQuery.type(data) === "array"){
+                    	console.log('array');
+                    	$.each(data, function (index, value) {
+                		  console.log(value);
+                		  jQuery("#"+value+"_validate").html("invalid zipcode");
+                		  // Will stop running after "three"
+                		  
+                		});
+                    	}
+                	else
+                		window.location.reload();
+                   jQuery(".contaier").show();
+                    jQuery("#loader-overlay").hide();
+//                     window.location.reload();
+                
+                },
+                error: function (xhr,status,error) {
+                    jQuery(".contaier").show();
+                    jQuery("#loader-overlay").hide();
+                    var e = xhr.responseText;
+
+//                     	console.log('array');
+                    	$.each(e, function (index, value) {
+
+                		  jQuery("#"+value+"_validate").html("invalid zipcode");
+                		
+                		  
+                		});
+//                    var result = $.parseJSON(e);
+
+                    return false;
+                }
+
+            });
+                }, 2000);
+                }
+                            }
+		}
+      }); 
+}); 
+</script>
+
+<div id="wrapper"> 
+ 
+<div id="page-wrapper">
+    <div class="contener-main">
+      <div class="tabs-main my-profile"> 
+        
+        <!-- Nav tabs -->
+         <button id="btnAdd" type="button" class="btn btn-primary">Add another profile</button>
+         <div class="clear"></div>
+        <ul id="tabs" class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#public-profile" aria-controls="public-profile" role="tab" data-toggle="tab">Public Profile </a></li>
+         <!-- <li role="presentation"><a href="#about-the-practice" aria-controls="about-the-practice" role="tab" data-toggle="tab">About the Practice</a></li>
+          <li role="presentation"><a href="#my-profile" aria-controls="my-profile" role="tab" data-toggle="tab">My Profile</a></li>-->
+        <li><a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#tab2" id="1" class="rte" data-toggle="tab">Profile 2</a></li><li><a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#tab3" id="2" class="rte" data-toggle="tab">Profile 3</a></li></ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content" id="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="public-profile">
+              <div id="practice-data">
+            <div class="uplode-logo"> 
+              <!--<img src="images/upload.png" alt="upload"/>
+            <label class="normal-label">Upload Logo</label>--> 
+              <span class="fileUpload"> <span><img src="./Swiss Monkey_files/upload.png" alt="upload"></span> Upload file
+              <input type="file" id="uploadFile">
+              </span> </div>
+            <div class="col-md-12 col-sm-12">
+              <form id="publicprofile_form">
+                <!-- left-form start-->
+                <div class="left-form">
+                  <div class="group">
+                    <input type="text" name="practicename" value="chand" class="material-input" required="">
+                    <span class="bar"></span>
+                    <label>PRACTICE NAME*</label>
+                  </div>
+                  <input type="hidden" name="company_id" value="30">
+                  <div class="group">
+                    <input type="text" class="material-input" value="hyd" name="address1" required="">
+                    <span class="bar"></span>
+                    <label>STREET ADDRESS LINE1*</label>
+                    <span id="address1_validate" class="error_custom_display"></span>
+                  </div>
+                  <div class="group">
+                    <input type="text" class="material-input" value="ddsfdf vdvdsgv" name="address2" required="">
+                    <span class="bar"></span>
+                    <label>STREET ADDRESS LINE2</label>
+                    <span id="address2_validate" class="error_custom_display"></span>
+                  </div>
+                  <div class="group">
+                    <input type="text" class="material-input" value="" name="url" required="">
+                    <span class="bar"></span>
+                    <label>WEBSITE URL</label>
+                    <span id="url_validate" class="error_custom_display"></span>
+                  </div>
+                  <div class="group date-width-50">
+                    <p>PRACTICE ESTABLISHED</p>
+                    <div id="datepicker" class="input-group date datepicker" data-date-format="mm-dd-yyyy">
+                        
+                      <input class="material-input" value="11-30--0001" name="establishedDate" type="text" readonly="" required="">
+
+                        <span class="bar"></span>
+                      <span class="input-group-addon">
+                          <img src="./Swiss Monkey_files/calender.png" alt="cal" class="datetator">
+                      </span> 
+                      <span id="openingDate_validate" class="error_custom_display"></span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- left-form End-->
+                <div class="mid-form">
+                  <div class="citi-state"> <a href="http://localhost/SwissMonkey/SwissMonkey/public/employerProfile/31#" class="btn btn-primary log-btn-pinkb">Keep anonymous</a>
+                    <div class="group">
+                      <input type="text" name="city" class="material-input" value="hyd" required="">
+                      <span class="bar"></span>
+                      <label>CITY*</label>
+                      <span id="city_validate" class="error_custom_display"></span>
+                    </div>
+                  </div>
+                  <div class="full-width">
+                    <div class="left-city">
+                      <div class="group">
+                          <input type="text" name="state" class="material-input" value="dgd" required="">
+                        <span class="bar"></span>
+                        <label>STATE*</label>
+                        <span id="state_validate" class="error_custom_display"></span>
+                      </div>
+                    </div>
+                    <div class="right-city">
+                      <div class="group">
+                          <input type="text" name="zipcode" id="" class="material-input text12" value="504002" required="">
+                        <span class="bar"></span>
+                        <label>ZIP CODE*</label>
+                        <span id="zipcode_validate" class="error_custom_display" style="color: red"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <h4>Primary Contact Information</h4>
+                <div class="clear"></div>
+                <div class="left-form">
+                  <div class="group">
+                      <input type="text" name="name" class="material-input" value="chandra shekar" required="">
+                    <span class="bar"></span>
+                    <label>NAME*</label>
+                    <span id="name_validate" class="error_custom_display"></span>
+                     <button type="button" name="nameanonymous" id="nameanonymous" class="btn" value="0" required="">Keep name anonymous</button>
+                    
+                  </div>
+                   <div class="group">
+<!--                   <p>EMAIL</p> -->
+                      <input type="text" disabled="disabled" id="empemail" name="email" class="material-input" value="lseerapu+1@rapidbizapps.com" required="">
+                    <span class="bar"></span>
+                    <label style="top: -15">EMAIL*</label>
+                    <span id="email_validate" class="error_custom_display"></span>
+                   
+                    <button type="button" name="changeemail" id="changeemail1" class="btn" value="0" required="" style="background: #fff;">Change email</button>
+                   
+                  </div>
+                 <div class="group">
+                      <input type="text" name="phoneno" id="numbervalidation" class="material-input phone_us" value="9848153820" required="">
+                    <span class="bar"></span>
+                    <label>PHONE NUMBER*</label>
+                    <span id="phoneno_validate" class="error_custom_display"></span>
+                  </div>
+                  </div>
+                  <div class="clear"></div>
+                   <div class="row col-md-8 col-sm-12">
+                    <h4>About the practice</h4>
+                  <div class="group">     
+                      <select class="material-input" name="xrays" required="">
+      						<option hidden=""></option>
+      						<option value="1">Yes</option>
+      						<option value="0">No</option>
+   						 </select>
+            				<span class="bar"></span>
+      						<label>DIGITAL XRAYS*</label>
+                                                <span id="xrays_validate" class="error_custom_display"></span>
+    					</div>
+                        <div class="clear"></div>
+                        <div class="group">     
+                            <input type="text" class="material-input" value="" name="totalDoctors" required="">
+            				<span class="bar"></span>
+      						<label>TOTAL NO. OF DOCTORS*</label>
+                                                <span id="totalDoctors_validate" class="error_custom_display"></span>
+    					</div>
+    					
+                        <div class="clear"></div>
+
+                        <div class="group appointment-length">
+                            <input type="text" name="appointmentLength" value="" class="material-input" required="">
+                    		<span class="bar"></span>
+                    		<label>LENGTH OF PROPHY APPOINTMENT*</label>
+                                <span id="appointmentLength_validate" class="error_custom_display"></span>
+                  		</div>
+                  		<div class="clear"></div>
+                  		<div class="group main-drop" style="z-index: 9">
+                                    <dl class="pms_dropdown" style="margin-bottom: 0px;">
+
+                                        <dt>
+                                            <a href="javascript:void(0)">
+                                                <span class="hida">PRACTICE MANAGEMENT SYSTEM
+                                                    <i class="img-dwn">
+                                                        <img src="./Swiss Monkey_files/dwon-arrow.png"></i></span>
+                                                <p class="mutliSelect_practice">
+                                                <i class="img-dwn">
+                                                <img src="./Swiss Monkey_files/dwon-arrow.png">
+                                                </i>
+                                                </p>
+                                            </a>
+                                        </dt>
+
+                                        <dd>
+                                            <div class="mutliSelect_practiceSoftware">
+                                                <ul style="display: none;">
+
+                                                                                                            <li>
+                                                            <input type="checkbox" software="Axium" name="practiceSoftware[]" value="1">
+                                                                   Axium
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Eaglesoft" name="practiceSoftware[]" value="2">
+                                                                   Eaglesoft
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Dentrix" name="practiceSoftware[]" value="3">
+                                                                   Dentrix
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Opensource" name="practiceSoftware[]" value="4">
+                                                                   Opensource
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Open Dental" name="practiceSoftware[]" value="5">
+                                                                   Open Dental
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Curve Hero" name="practiceSoftware[]" value="6">
+                                                                   Curve Hero
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Dovetail" name="practiceSoftware[]" value="7">
+                                                                   Dovetail
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Total Dental" name="practiceSoftware[]" value="8">
+                                                                   Total Dental
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Easy Dental" name="practiceSoftware[]" value="9">
+                                                                   Easy Dental
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="EndoVision" name="practiceSoftware[]" value="10">
+                                                                   EndoVision
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Adstra Management" name="practiceSoftware[]" value="11">
+                                                                   Adstra Management
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="AltaPoint" name="practiceSoftware[]" value="12">
+                                                                   AltaPoint
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="PerioVision" name="practiceSoftware[]" value="13">
+                                                                   PerioVision
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Viive" name="practiceSoftware[]" value="14">
+                                                                   Viive
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="SoftDent" name="practiceSoftware[]" value="15">
+                                                                   SoftDent
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="DentiMax" name="practiceSoftware[]" value="16">
+                                                                   DentiMax
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="DentiSoft" name="practiceSoftware[]" value="17">
+                                                                   DentiSoft
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="DentalVision Enterprise" name="practiceSoftware[]" value="18">
+                                                                   DentalVision Enterprise
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Practice Made Perfect" name="practiceSoftware[]" value="19">
+                                                                   Practice Made Perfect
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="MOGO" name="practiceSoftware[]" value="20">
+                                                                   MOGO
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="MacPractice DDS" name="practiceSoftware[]" value="21">
+                                                                   MacPractice DDS
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Genesis" name="practiceSoftware[]" value="22">
+                                                                   Genesis
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="EZ2000" name="practiceSoftware[]" value="23">
+                                                                   EZ2000
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="DentrixAscend" name="practiceSoftware[]" value="24">
+                                                                   DentrixAscend
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Denticon" name="practiceSoftware[]" value="25">
+                                                                   Denticon
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Power Practice PX" name="practiceSoftware[]" value="26">
+                                                                   Power Practice PX
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="PracticeWorks" name="practiceSoftware[]" value="27">
+                                                                   PracticeWorks
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="ACE Dental" name="practiceSoftware[]" value="28">
+                                                                   ACE Dental
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Dentech" name="practiceSoftware[]" value="29">
+                                                                   Dentech
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="SuzyDental" name="practiceSoftware[]" value="30">
+                                                                   SuzyDental
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="XLDent" name="practiceSoftware[]" value="31">
+                                                                   XLDent
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="QSI" name="practiceSoftware[]" value="32">
+                                                                   QSI
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Other" name="practiceSoftware[]" value="33">
+                                                                   Other
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="Ms Office" name="practiceSoftware[]" value="34">
+                                                                   Ms Office
+                                                        </li><li>
+                                                                                                                </li><li>
+                                                            <input type="checkbox" software="SVL" name="practiceSoftware[]" value="35">
+                                                                   SVL
+                                                        </li><li>
+                                                                                                        </li></ul>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                  		<div class="clear"></div>
+
+                     <div class="group main-drop">
+                        <dl class="dropdown">
+
+                            <dt>
+                                <a href="javascript:void(0)">
+                                                    <span class="hidaa">BENEFITS
+                                                        <i class="img-dwn">
+                                                            <img src="./Swiss Monkey_files/dwon-arrow.png">
+                                                         </i>
+                                                     </span>
+                                    <p class="multiSel">
+                                    	<i class="img-dwn">
+                                    		<img src="./Swiss Monkey_files/dwon-arrow.png">
+                                    	</i>
+                                    </p>
+                                </a>
+                            </dt>
+
+                            <dd>
+                                <div class="mutliSelect">
+                                    <ul style="display: none;">
+                                                                                <li>
+                                            <input type="checkbox" benefit="Medical" name="benefits[]" value="1">
+                                        Medical                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Dental" name="benefits[]" value="2">
+                                        Dental                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Vision" name="benefits[]" value="3">
+                                        Vision                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Retirement Savings" name="benefits[]" value="4">
+                                        Retirement Savings                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Holidays/Paid Time Off/Vacation" name="benefits[]" value="5">
+                                        Holidays/Paid Time Off/Vacation                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Continuing Education" name="benefits[]" value="6">
+                                        Continuing Education                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Parking" name="benefits[]" value="7">
+                                        Parking                                        </li><li>
+                                                                                </li><li>
+                                            <input type="checkbox" benefit="Other" name="benefits[]" value="8">
+                                        Other                                        </li><li>
+                                                                            </li></ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="clear"></div>
+
+
+                   <div class="group" id="custom_benefit">
+                            <input type="text" name="custom_benefit" id="custom_benefit_text" class="material-input" value="" required="">
+                    		<span class="bar"></span>
+                    		<label>OTHER BENEFITS </label>
+                                <span id="benefits_validate" class="error_custom_display"></span>
+                  		</div>
+                  		<div class="group">
+                            <input type="text" name="video_link" value="" class="material-input" required="">
+                    		<span class="bar"></span>
+                    		<label>PRACTICE VIDEO LINK</label>
+                                <span id="video_link_validate" class="error_custom_display"></span>
+                  		</div>
+                        <div class="group-pad group">   
+                        <textarea rows="4" name="practiceDescription" class="material-input border-full" cols="50" placeholder="Tell us what makes your practice unique."> </textarea>
+            				<span class="bar"></span>
+            				<label>PRACTICE DESCRIPTION</label>
+      						<span id="practiceDescription_validate" class="error_custom_display"></span>
+    					</div> 
+                      <!--  <div class="next-btn">
+             
+                        <!--<a href="javascript:void(0)" class="btn log-btn-pinkb color-btn">Next</a>-->
+                        
+                         
+                        
+                        </div>
+                </form></div>
+                <div class="mid-form">
+                  <div class="citi-state"> </div>
+                </div>
+                <div class="login-bottom">
+                            <button type="submit" id="register" class="btn btn-primary log-btn log-btn-03">SAVE</button>
+                            
+                </div>
+              
+            </div>
+</div>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+    <div class="clear-paddin"></div>
+  </div>
+  
+  <!-- /#page-wrapper --> 
+  
+</div>
+<div id="msgModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Alert</h4>
+      </div>
+      <div class="modal-body">
+        <p class="modal-body-text">
+      </p></div>
+      <div class="modal-footer">
+        
+        <button type="submit" class="btn btn-default" id="ok">Ok</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /#wrapper --> 
+
+
+        
+
+    
+
+
+<style>
+
+    .postajob{
+    background: #489EAB ;
+    border: 1px solid #553e70;
+    }
+    .postajob:hover, .postajob:focus {
+    color: #553e70;
+    text-decoration: none;
+    }
+    .spancount{
+    margin-left: 6px;
+    font-weight: bold;
+    }
+</style>
+</body></html>

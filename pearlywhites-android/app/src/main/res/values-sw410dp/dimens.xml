@@ -1,0 +1,41 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">18.24dp</dimen>
+    <dimen name="activity_vertical_margin">18.24dp</dimen>
+
+    <dimen name="margin_xsmall">5.7dp</dimen>
+    <dimen name="margin_3">3.42dp</dimen>
+    <dimen name="margin_8">9.12dp</dimen>
+    <dimen name="margin_small">11.4dp</dimen>
+    <dimen name="margin_medium">17.1dp</dimen> <!-- 22 px aprox -->
+    <dimen name="margin_large">22.8dp</dimen> <!-- 32 px aprox  38px = 19dp -->
+    <dimen name="margin_xlarge">28.5dp</dimen>  <!-- 50 px aprox , 46Px = 23 dp -->
+    <dimen name="margin_xxlarge">34.2dp</dimen> <!-- 58 px aprox -->
+    <dimen name="margin_xxxlarge">34.2dp</dimen> <!-- 70 px aprox -->
+    <dimen name="margin_40dp">45.6dp</dimen>      <!-- 80 px aprox -->
+    <dimen name="margin_45dp">51.3dp</dimen>  <!--88px = 44dp -->
+    <dimen name="margin_50dp">57dp</dimen>
+    <dimen name="margin_65">74.1dp</dimen>    <!-- 135 px aprox : 67.5dp-->
+    <dimen name="margin_80">91.2dp</dimen>
+    <dimen name="margin_90">102.6dp</dimen>  <!-- 142 px aprox -->
+    <dimen name="margin_100">114dp</dimen>
+
+    <dimen name="padding_xsmall">5.7dp</dimen>
+    <dimen name="padding_small">11.4dp</dimen>
+    <dimen name="padding_12dp">13.68dp</dimen>
+    <dimen name="padding_medium">17.1dp</dimen>
+    <dimen name="padding_large">22.8dp</dimen>
+
+    <dimen name="label_hint_textsize">15.0dp</dimen>
+
+    <dimen name="edittext_textsize">25.0dp</dimen>
+    <dimen name="header_textsize">20.0dp</dimen>
+    <dimen name="textsize_16">18.24dp</dimen>
+
+    <dimen name="login_logo_margin_top">19.38dp</dimen>  <!-- 34 px aprox -->
+    <dimen name="login_logo_margin_right">23.94dp</dimen>  <!-- 42 px aprox -->
+
+    <dimen name="main_heading">17.92sp</dimen>  <!-- 42 px aprox -->
+    <dimen name="drawable_padding">3dp</dimen>
+    <dimen name="practice_padding">3dp</dimen>
+</resources>

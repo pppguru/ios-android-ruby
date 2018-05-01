@@ -1,0 +1,60 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      <span class="icon-bar"></span></button>
+    <%= link_to 'Swiss Monkey', job_postings_path, class: 'navbar-brand' %></div>
+
+  <div class="pull-left">
+    <%= render 'layouts/welcome' %>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <% if current_user&.employer? %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= image_tag 'ger-icon.png', alt: 'user' %></a>
+        <ul class="dropdown-menu">
+          <li class="icon-drop"></li>
+          <li>
+            <%= link_to companies_path do %>
+              <i class="fa fa-fw fa-user"></i> Profile
+            <% end %>
+          </li>
+          <li>
+            <%= link_to account_path do %>
+              <i class="fa fa-fw fa-gear"></i> Settings
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-fw fa-sign-out"></i> Sign Out
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown" id="subscriptionNotification">
+
+      </li>
+    <% end %>
+    <li class="dropdown" id="notifications-div">
+      <a href="#" class="dropdown-toggle user-alert-li" data-toggle="dropdown">
+        <%= image_tag 'user_icon.png', alt: 'user' %>
+
+        <span class="user-alert notifications_div">
+                                </span>
+
+
+      </a>
+
+      <ul class="dropdown-menu alert-dropdown" id="applicants_list">
+      </ul>
+    </li>
+
+    <% if current_user&.employer? %>
+      <li>
+        <%= link_to new_job_posting_path do %>
+          <button class="btn postajob"><strong>Post a Job</strong></button>
+        <% end %></li>
+    <% end %>
+  </ul>
+</nav>

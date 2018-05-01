@@ -1,0 +1,106 @@
+<script>
+  $(document).ready(function () {
+    var jobId;
+
+    $(".close").on('click', function () {
+      window.location.reload();
+    });
+
+    $(".status_change").click(function () {
+      jobId = $(this).attr('atr');
+    });
+
+    $(".other_reason").hide();
+
+    $("input[name*='closing_reason_id']").click(function () {
+      if ($(this).attr('id') === 'Other')
+        $(".other_reason").show();
+      else
+        $(".other_reason").hide();
+    });
+
+    $.validator.addMethod("feedback_required", function (value) {
+      var n = $('input:radio[name^="closing_reason_id"]:checked').length;
+      return (n > 0);
+    }, 'Please provide your feedback.');
+
+    $.validator.addMethod('valid_format', function (value) {
+      value = value.replace(/\s+/g, ' ');
+      if (value === '') {
+        return true;
+      }
+      return (value.match(/^[a-zA-Z() ]+$/));
+    }, "");
+
+    $("#job_closing_form").validate({
+      rules: {
+        closing_reason_id: {
+          feedback_required: true
+        },
+        other_reason: {}
+      },
+      messages: {
+        closing_reason_id: {
+          feedback_required: "*Required"
+        },
+        other_reason: {
+          valid_format: "Invalid"
+        }
+      },
+      errorPlacement: function (error, element) {
+        var name = $(element).attr("name");
+        error.appendTo($("#" + name + "_validate"));
+      },
+      submitHandler: function (form) {
+        $.ajax({
+          url: "/jobs/" + jobId + '?action=close',
+          type: 'PUT',
+          data: $('#job_closing_form').serialize(),
+          success: function () {
+            window.location.reload();
+          },
+          error: function (xhr, status, error) {
+            return false;
+          }
+        });
+      }
+    });
+
+
+  });
+</script>
+<div class="modal fade" id="close-job-modal" role="dialog" style="margin-top: 10%;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Provide us more information</h4>
+      </div>
+      <form method="post" name="job_closing_form" id="job_closing_form">
+        <div class="modal-body">
+          <span id='job_closed_validate' class="error_custom_display1"></span><br>
+          <% @closed_job_reasons.each do |status| %>
+            <label>
+              <%= radio_button_tag :closing_reason_id, status.id %>
+              <%= status.description %>
+            </label>
+            <br>
+          <% end %>
+          <div class="other_reason" style="margin-top: 20px;">
+            <div class="group group-pad">
+              <input type="text" class="material-input" name="other_reason"
+                     required/>
+              <span class="bar"></span>
+              <label>ENTER REASON </label>
+              <span id='reason_validate' class="error_custom_display"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="modal-close" class="btn btn-default">Close</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

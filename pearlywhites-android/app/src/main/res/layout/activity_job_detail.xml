@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rapidbizapps.swissmonkey.jobs.JobDetailActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/job_header" />
+
+    <include
+        android:id="@+id/tab_strip"
+        layout="@layout/list_map_strip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/job_or_practice_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:layout_weight="6"
+        android:paddingLeft="@dimen/margin_large"
+        android:paddingRight="@dimen/margin_large" />
+
+</LinearLayout>

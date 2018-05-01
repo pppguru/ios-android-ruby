@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/setting_bg"
+    tools:context="com.rapidbizapps.swissmonkey.fragments.AboutUsFragment"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_profileImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_65">
+        <TextView
+            android:id="@+id/tv_signedInAs"
+            style="@style/regular_text"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_xxxlarge"
+            android:layout_centerHorizontal="true"
+            android:text="Signed in as:" />
+
+        <com.rapidbizapps.swissmonkey.utility.CircleImageView
+            android:id="@+id/profile_pic_settings"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/empty_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_signedInAs"
+            android:layout_marginTop="@dimen/margin_small"/>
+
+        <TextView
+            android:id="@+id/profileName"
+            style="@style/regular_text"
+            android:layout_below="@id/profile_pic_settings"
+            android:text="Name"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/margin_xxxlarge"
+            android:layout_marginTop="@dimen/margin_small"/>
+        <TextView
+            android:id="@+id/tv_resetPassword"
+            style="@style/regular_text"
+            android:layout_below="@id/profileName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/reset_password_btn"
+            android:textSize="@dimen/textsize_16" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_deactivateAccount"
+        style="@style/regular_text"
+        android:layout_below="@id/layout_profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:padding="@dimen/padding_small"
+        android:text="Deactivate account"
+        android:textColor="@color/purple"
+        android:textSize="@dimen/textsize_16" />
+</RelativeLayout>

@@ -1,0 +1,8 @@
+%aside#alerts
+  - flash.each do |name, msg|
+    - alert_subclass = { notice: :info, alert: :warning, error: :danger }[name.to_sym] || name
+    - if msg.is_a?(String)
+      .alert{ class: "alert-#{alert_subclass}" }
+        %button.close{ type: 'button', data: { dismiss: 'alert' } }
+          &times;
+        = msg

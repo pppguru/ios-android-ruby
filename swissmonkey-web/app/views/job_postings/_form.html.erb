@@ -1,0 +1,328 @@
+<%= javascript_include_tag 'job_postings/form' %>
+
+<div class="edit-job" id="wrapper"
+     data-job-id="<%= job_posting.id %>"
+     data-check="<%= @check %>"
+     data-save-url="<%= job_posting.id.present? ? job_posting_path(job_posting) : job_postings_path %>"
+     data-save-method="<%= job_posting.id.present? ? 'PUT' : 'POST' %>"
+>
+  <div id="page-wrapper">
+    <div id="form-container">
+      <div class="left-right-padding max-wdt-form">
+        <div id='jobPostingSteps' style="display: none;">
+          <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+            <div class="row">
+              <div class="job-details">
+                <ul class="job_posting_steps">
+                  <li id="details_step"><a href="javascript:void(0)">
+                    <span class="job-txt">1</span>
+                    <span>Job Details</span>
+                  </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+          <div class="row">
+            <div class="payment-errors"></div>
+            <%= form_for job_posting, html: { novalidate: 'novalidate', id: 'job-details-form' } do |f| %>
+              <%= render 'layouts/form_errors', model: f.object %>
+              <div class="jod-details-form">
+                <div class="clear"></div>
+                <div class="group">
+                  <%= f.select :company_location_id,
+                               options_from_collection_for_select(@practice_locations, :id, :select_label),
+                               class: 'material-input checklocation', required: 'required' %>
+                  <span class="bar"></span>
+                  <label>PRACTICE LOCATION* </label>
+                  <span id='company_id_validate' class="error_custom_display"></span>
+                </div>
+                <div class="clear"></div>
+                <div class="group">
+                  <%= f.select :job_position_id,
+                               options_from_collection_for_select(@job_positions, :id, :name),
+                               class: 'material-input', required: 'required' %>
+                  <span class="bar"></span>
+                  <label>POSITION*</label>
+                  <span id='position_validate' class="error_custom_display"></span>
+                </div>
+                <div class="clear"></div>
+
+                <div class="group date-width-50">
+                  <p>POSITION AVAILABLE ON*</p>
+
+                  <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                    <%= f.text_field :fill_by, class: 'material-input', required: 'required' %>
+                    <span class="bar"></span>
+                    <span class="input-group-addon">
+                      <%= image_tag 'calender.png', alt: 'cal', class: 'datetator' %>
+                    </span>
+                    <span id='filldate_validate' class="error_custom_display"></span>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="group">
+                  <%= f.select :job_type,
+                               options_from_collection_for_select(job_types_enum, :first, :last),
+                               class: 'material-input', required: 'required' %>
+                  <span class="bar"></span>
+                  <label>JOB TYPE*</label>
+                  <span id='jobtype_validate' class="error_custom_display"></span>
+                </div>
+                <div class="clear"></div>
+                <div class="table-form" id="work-preferences">
+                  <p>WORK DAY PREFERENCES*</p>
+                  <span id='workshift_validate' class="error_custom_display"></span>
+                  <table width="256" border="0">
+                    <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>M</td>
+                      <td>T</td>
+                      <td>W</td>
+                      <td>T</td>
+                      <td>F</td>
+                      <td>S</td>
+                      <td>S</td>
+                    </tr>
+                    <% shift_times_enum.each do |key, label| %>
+                      <tr>
+                        <td><%= label %><br/>(<%= shift_description(key) %>)
+                        </td>
+                        <% (0...7).each do |day_of_week| %>
+                          <td>
+                            <%= label_tag do %>
+                              <%= check_box_tag "shifts[#{key}]", day_of_week,
+                                                job_posting.shift_for_day?(key, day_of_week),
+                                                class: "workPreferenceShifts #{key.downcase}"
+                              %>
+                            <% end %>
+                          </td>
+                        <% end %>
+                      </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="clear"></div>
+                <div class="group group-pad">
+                  <%= f.text_area :job_description, rows: 4, class: 'material-input border-full',
+                                  onkeyup: "capitalizeFirstLetter(this.id)", cols: 50, maxlength: 1000,
+                                  required: 'required' %>
+                  <span class="bar"></span>
+                  <label> JOB DESCRIPTION</label>
+                  <span id='jobDescription_validate' class="error_custom_display"></span>
+                </div>
+                <div class="clear"></div>
+                <a class="more-details">+Show more details</a>
+
+                <div class="clear"></div>
+                <div class="slide-details">
+                  <div class="group">
+                    <%= f.select :years_experience,
+                                 options_from_collection_for_select(years_experience_enum, :first, :last),
+                                 class: 'material-input', required: 'required' %>
+                    <span class="bar"></span>
+                    <label>NO OF YEARS OF EXPERIENCE REQUIRED </label>
+                    <span id='experience_validate' class="error_custom_display"></span>
+                  </div>
+                  <div class="clear"></div>
+                  <div class="group main-drop">
+                    <dl class="pms_dropdown">
+
+                      <dt>
+                        <a href="javascript:void(0)">
+                                                <span class="hidaa">PRACTICE SOFTWARE EXPERIENCE
+                                                    <i class="img-dwn"><%= image_tag 'dwon-arrow.png' %></i></span>
+
+                          <p class="mutliSelect_practice"><i class="img-dwn"><%= image_tag 'dwon-arrow.png' %></i>
+                          </p>
+                        </a>
+                      </dt>
+
+                      <dd>
+                        <div class="mutliSelect_practiceSoftware">
+                          <ul>
+                            <%= f.collection_check_boxes(:practice_management_system_ids, @practice_management_systems,
+                                                        :id, :software) do |b| %>
+                              <li>
+                                <%= b.label(class: "check_box") %>
+                                <%= b.check_box(class: "check_box") %>
+                              </li>
+                            <% end %>
+                            <li>
+                              <label>
+                                <input type="checkbox"
+                                       software="Other" id="other_practice_software"
+                                       name="other_practice_software"/>
+                                Other
+                              </label>
+                            <li>
+                          </ul>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+
+                  <div class="clear"></div>
+                  <div class="custom_practice_software">
+                    <div class="group group-pad">
+                      <%= f.text_field :custom_practice_software, class: 'material-input',
+                                       required: 'required'
+                      %>
+                      <span class="bar"></span>
+                      <label>ENTER PRACTICE SOFTWARE EXPERIENCE</label>
+                      <span id='newpractice_validate' class="error_custom_display"></span>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+
+                  <div class="clear"></div>
+                  <div class="group">
+                    <%= f.select :require_resume,
+                                 options_from_collection_for_select(boolean_selections_enum, :first, :last),
+                                 class: 'material-input' %>
+                    <span class="bar"></span>
+                    <label> RESUME REQUIRED?</label>
+                    <span id='resume_validate' class="error_custom_display"></span>
+                  </div>
+                  <div class="clear"></div>
+                  <div class="group">
+                    <%= f.select :require_recommendation_letter,
+                                 options_from_collection_for_select(boolean_selections_enum, :first, :last),
+                                 class: 'material-input' %>
+                    <span class="bar"></span>
+                    <label> LETTERS OF RECOMMENDATION REQUIRED?</label>
+                    <span id='xrays_validate' class="error_custom_display"></span>
+                  </div>
+                  <div class="clear"></div>
+                  <span class="skills-header">ADDITIONAL SKILLS</span>
+
+                  <div class="form-group">
+                    <select id="selectpicker12" class="selectpicker" name="skills[]" multiple
+                            data-live-search="true" data-actions-box="true">
+                      <% @software_proficiencies_top_level.each do |proficiency| %>
+                        <option class="select-skills"
+                                software="<%= proficiency.name %>"
+                                value="<%= proficiency.id %>"
+                                <%= job_posting.software_proficiencies.include?(proficiency) ? 'selected' : '' %>>
+                          <%= proficiency.name %>
+                        </option>
+                      <% end %>
+                      <% @software_proficiencies_with_children.each do |proficiency| %>
+                        <optgroup label="<%= proficiency.name %>">
+                          <% proficiency.children.each do |child| %>
+                            <option class="select-skills"
+                                    software="<%= child.name %>"
+                                    value="<%= child.id %>"
+                                    <%= job_posting.software_proficiencies.include?(proficiency) ? 'selected' : '' %>>
+                              <%= child.name %>
+                            </option>
+                          <% end %>
+                        </optgroup>
+                      <% end %>
+                    </select>
+                  </div>
+                  <div class="bilingual-text">
+                    <div class="group group-pad">
+                      <%= f.text_field :languages, class: 'material-input', required: 'required',
+                                       onkeyup: 'capitalizeFirstLetter(this.id)' %>
+                      <span class="bar"></span>
+                      <label>ENTER LANGUAGES </label>
+                      <span id='languages_validate' class="error_custom_display"></span>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+
+                  <div class="group">
+                    <div class="chk-boxs">
+                      <p>COMPENSATION PREFERENCES</p>
+                      <ul>
+                        <% compensation_types_enum.each do |key, label| %>
+                          <li>
+                            <%= label_tag '', class: 'normal-label' do %>
+                              <%= f.radio_button :compensation_type, value: key %>
+                              <%= label %>
+                            <% end %>
+                          </li>
+                        <% end %>
+                      </ul>
+                      <span id='compensation_validate' class="error_custom_display"></span>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                  <div class='div-amount'>
+                    <p>ENTER COMPENSATION</p>
+
+                    <div class="group group-pad">
+                      <span id="touchspin" class="input-group-addon bootstrap-touchspin-prefix">$</span>
+                      <%= f.text_field :compensation_range_low, class: 'material-input border-full', size: 6,
+                                       required: 'required' %>
+                      <span class="bar"></span>
+                      <label>FROM</label>
+                      <span id='from_compensationRange_validate'
+                            class="error_custom_display"></span>
+                    </div>
+                    <div class="group group-pad">
+                      <span id="touchspin" class="input-group-addon bootstrap-touchspin-prefix"></span>
+                      <%= f.text_field :compensation_range_high, class: 'material-input border-full', size: 6,
+                                       required: 'required' %>
+                      <span class="bar"></span>
+                      <label>TO</label>
+                      <span id='to_compensationRange_validate'
+                            class="error_custom_display"></span>
+                    </div>
+                  </div>
+
+                  <div class="clear"></div>
+                  <div class="chk-boxs">
+                    <p>SHOW APPLICANTS WITH : </p>
+                    <ul>
+                      <li>
+                        <%= label_tag '', class: 'normal-label' do %>
+                          <%= f.check_box :require_photo %> PHOTOS ONLY
+                        <% end %>
+                      </li>
+                      <li>
+                        <%= label_tag '', class: 'normal-label' do %>
+                          <%= f.check_box :require_video %> VIDEOS
+                        <% end %>
+                      </li>
+                    </ul>
+
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <%= f.submit 'Save Job', class: 'btn btn-primary log-btn-pinkb color-btn', id: 'postJob' %>
+                
+                <div class="next-btn" id='job-details-postjob-buttons' style="display:none">
+                  <a href="#" class="btn btn-primary log-btn-pinkb">Preview</a>
+                  <button class="btn btn-primary log-btn-pinkb color-btn submitBtn" value="0"
+                          type="submit"
+                          id="submitBtn">Publish
+                  </button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="clear"></div>
+          <div class="next-btn" id='job-details-form-buttons'>
+            <a href="#" class="btn btn-primary log-btn-pinkb">Preview</a>
+            <button class="btn btn-primary log-btn-pinkb color-btn" type="button"
+                    id="jobDetailNext">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<%= render 'confirm_modal' %>
+<%= render 'fill_profile_prompt_modal' %>
+<%= render 'delete_card_confirmation_modal' %>
+<%= render 'save_card_error_modal' %>
+<%= render 'discount_applied_modal' %>

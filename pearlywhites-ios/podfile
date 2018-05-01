@@ -1,0 +1,15 @@
+target 'SwissMonkey' do
+    
+    pod 'SDWebImage'
+    pod 'GoldenFleece'
+    pod 'TPKeyboardAvoiding'
+    pod 'Reachability'
+    pod 'ASIHTTPRequest'
+    pod 'Flurry-iOS-SDK/FlurrySDK'
+    pod 'GoogleMaps'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'iOS-Slide-Menu'
+    pod 'MHCustomTabBarController'
+    
+end

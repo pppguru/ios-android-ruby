@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:weightSum="4"
+        android:gravity="center"
+        android:background="@color/profile_progress_background">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/circle_1_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_small"
+                android:src="@drawable/cs1"/>
+            <View
+                android:id="@+id/indicator_1_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/circle_2_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_small"
+                android:src="@drawable/cu2"/>
+            <View
+                android:id="@+id/indicator_2_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/circle_3_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_small"
+                android:src="@drawable/cu3"/>
+            <View
+                android:id="@+id/indicator_3_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/circle_4_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_small"
+                android:src="@drawable/cu4"/>
+            <View
+                android:id="@+id/indicator_4_activity_profile"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/blue"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_activity_profile"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressbar_activity_profile"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_small"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_xxxlarge"
+        android:layout_marginRight="@dimen/margin_xxxlarge"
+        android:enabled="false"
+        android:max="20"
+        android:progressDrawable="@drawable/custom_progressbar" />
+
+</LinearLayout>

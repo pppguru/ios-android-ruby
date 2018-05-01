@@ -1,0 +1,333 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.rapidbizapps.swissmonkey.jobs.PracticeInfoFragment">
+
+        <TextView
+            android:id="@+id/about_practice"
+            style="@style/normal_text"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_gravity="center_horizontal"
+            android:text="About the Practice"
+            android:textColor="@color/purple2"
+            android:textSize="@dimen/header_textsize"
+            fontPath="@string/bold_font_path" />
+
+        <!--Practice Established-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/practice_established_label"
+                android:text="Practice Established"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/practice_established"
+                android:text=""
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+        </LinearLayout>
+
+        <!--Practice Management System-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/practice_management_system_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Practice Management System"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:id="@+id/practice_management_system"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+        </LinearLayout>
+
+        <!--Digital X-Rays-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/digital_x_rays_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Digital X-Rays"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:id="@+id/digital_x_rays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+        </LinearLayout>
+
+        <!--Total Number of Doctors-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/number_of_doctors_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Number of Doctors"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:id="@+id/number_of_doctors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+        </LinearLayout>
+
+        <!--Length of Prophy Appointment-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/length_of_appointment_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Length of Prophy Appointment"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:id="@+id/length_of_appointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+        </LinearLayout>
+
+        <!--Benefits-->
+        <LinearLayout
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:id="@+id/benefits_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Benefits"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:id="@+id/benefits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+        </LinearLayout>
+
+        <!--Total Number of Operatories-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/number_of_operatories_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Number of Operatories"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingRight="@dimen/practice_padding"
+                fontPath="@string/bold_font_path"/>
+
+            <TextView
+                android:id="@+id/number_of_operatories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator" />
+
+        <LinearLayout
+            android:id="@+id/practice_info_frag_content_after_about_the_practice_ll"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/practice_desc_label"
+                style="@style/normal_text"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Practice Description"
+                android:textColor="@color/purple2"
+                android:textSize="@dimen/header_textsize"
+                fontPath="@string/bold_font_path"
+                android:paddingRight="@dimen/practice_padding"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_small"
+                android:id="@+id/practice_description"
+                style="@style/normal_text"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:paddingLeft="@dimen/practice_padding"/>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator" />
+
+
+            <TextView
+                android:id="@+id/photos_label"
+                style="@style/normal_text"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Photos"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                android:paddingRight="@dimen/practice_padding"/>
+
+            <TextView
+                android:id="@+id/phots_not_avaialable_label"
+                style="@style/normal_text"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="No photos available"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/practice_padding"
+                 />
+
+
+            <!-- <GridView
+                 android:id="@+id/photos_grid"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:numColumns="auto_fit"
+                 />-->
+
+            <com.rapidbizapps.swissmonkey.utility.ExpandableHeightGridView
+                android:layout_marginTop="@dimen/margin_small"
+                android:id="@+id/photos_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:horizontalSpacing="2dp"
+                android:isScrollContainer="false"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="20dp" />
+
+            <TextView
+                android:id="@+id/video_label"
+                style="@style/normal_text"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Video"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path" />
+            <TextView
+                android:id="@+id/videos_not_avaialable_label"
+                style="@style/normal_text"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="No videos available"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:layout_marginTop="@dimen/margin_small"
+                android:id="@+id/video_link"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

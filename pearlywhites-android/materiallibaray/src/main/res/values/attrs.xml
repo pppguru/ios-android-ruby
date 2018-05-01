@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="MaterialEditText">
+    <!-- The base color of the line and the texts. Default is black. -->
+    <attr name="met_baseColor" format="color" />
+    <!-- The highlight color of the line, and the floating label if the highlightFloatingLabel is true. -->
+    <attr name="met_primaryColor" format="color" />
+    <!-- How the floating label should be shown. Default is none -->
+    <attr name="met_floatingLabel">
+      <enum name="none" value="0" />
+      <enum name="normal" value="1" />
+      <enum name="highlight" value="2" />
+    </attr>
+    <!-- The color for when something is wrong.(e.g. exceeding max characters) -->
+    <attr name="met_errorColor" format="color" />
+    <!-- Min characters count limit. 0 means no limit. -->
+    <attr name="met_minCharacters" format="integer" />
+    <!-- max Characters count limit. 0 means no limit. -->
+    <attr name="met_maxCharacters" format="integer" />
+    <!-- Whether to show the bottom ellipsis in singleLine mode -->
+    <attr name="met_singleLineEllipsis" format="boolean" />
+    <!-- Reserved bottom text lines count, no matter if there is some helper/error text. -->
+    <attr name="met_minBottomTextLines" format="integer" />
+    <!-- Helper text at the bottom -->
+    <attr name="met_helperText" format="string" />
+    <!-- Helper text color -->
+    <attr name="met_helperTextColor" format="color" />
+    <!-- Font of the paint used to draw accent texts -->
+    <attr name="met_accentTypeface" format="string" />
+    <!-- Font used on view -->
+    <attr name="met_typeface" format="string" />
+    <!-- Custom float label text -->
+    <attr name="met_floatingLabelText" format="string" />
+    <!-- spacing between the main text and the floating label -->
+    <attr name="met_floatingLabelPadding" format="dimension" />
+    <!-- Hide underline -->
+    <attr name="met_hideUnderline" format="boolean" />
+    <!-- Underline's color -->
+    <attr name="met_underlineColor" format="color" />
+    <!-- Auto validate -->
+    <attr name="met_autoValidate" format="boolean" />
+    <!-- Left icon -->
+    <attr name="met_iconLeft" format="reference" />
+    <!-- Right icon -->
+    <attr name="met_iconRight" format="reference" />
+    <!-- Padding between icon(s) and the main area. 8dp by default. -->
+    <attr name="met_iconPadding" format="dimension" />
+    <!-- Clear button -->
+    <attr name="met_clearButton" format="boolean" />
+    <!-- The floating label's text size. 12sp by default. -->
+    <attr name="met_floatingLabelTextSize" format="dimension" />
+    <!-- The floating label's text color. -1 by default. -->
+    <attr name="met_floatingLabelTextColor" format="color" />
+    <!-- The bottom texts' size. 12sp by default. -->
+    <attr name="met_bottomTextSize" format="dimension" />
+    <!-- Always show the floating label, instead of animating it in/out. False by default. -->
+    <attr name="met_floatingLabelAlwaysShown" format="boolean" />
+    <!-- Always show the helper text, no matter if the edit text is focused. False by default. -->
+    <attr name="met_helperTextAlwaysShown" format="boolean" />
+    <!-- Whether use animation to show/hide the floating label. True by default. -->
+    <attr name="met_floatingLabelAnimating" format="boolean"/>
+    <!-- Text color -->
+    <attr name="met_textColor" format="color" />
+    <!-- Hint Text Color -->
+    <attr name="met_textColorHint" format="color" />
+    <!-- Auto validate on focus lost. False by default. -->
+    <attr name="met_validateOnFocusLost" format="boolean"/>
+    <!-- Whether check the characters count at the beginning it's shown. True by default. -->
+    <attr name="met_checkCharactersCountAtBeginning" format="boolean"/>
+
+    <attr name="met_autoscale" format="boolean"/>
+
+  </declare-styleable>
+
+    <declare-styleable name="CustomAttributes">
+
+        <!-- Color of ripple animation -->
+        <attr name="rippleColor" format="color|reference" />
+        <!-- Speed of ripple animation -->
+        <attr name="rippleSpeed" format="float" />
+        <!-- indicate if the slider must show number indicator -->
+        <attr name="showNumberIndicator" format="boolean" />
+        <!-- in progress view indicate max value of progress -->
+        <attr name="max" format="integer" />
+        <!-- in progress view indicate min value of progress -->
+        <attr name="min" format="integer" />
+        <!-- in progress view indicate value of progress -->
+        <attr name="value" format="integer" />
+        <!-- in progress view indicate value of progress -->
+        <attr name="progress" format="integer" />
+        <attr name="ringWidth" format="dimension" />
+        <!-- in switche's view indicate state of view -->
+        <attr name="check" format="boolean" />
+        <attr name="checkBoxSize" format="dimension" />
+        <attr name="thumbSize" format="dimension" />
+        <!-- in float button indicate icon resource -->
+        <attr name="iconDrawable" format="integer" />
+        <!-- in button whitch contains drawable indicate icon resource -->
+        <attr name="iconSize" format="dimension" />
+        <!-- in float button indicate if must start with animation -->
+        <attr name="animate" format="boolean" />
+        <!-- set the border of the ripple frame -->
+        <attr name="rippleBorderRadius" format="float" />
+        <!-- if true, delays calls to OnClickListeners until ripple effect ends -->
+        <attr name="clickAfterRipple" format="boolean" />
+    </declare-styleable>
+
+    <!-- These top three attributes are not accessible to library users -->
+    <attr name="md_divider" format="color" />
+
+    <!-- Accessible global theming attributes -->
+    <attr name="md_dark_theme" format="boolean" />
+    <attr name="md_background_color" format="color" />
+
+    <attr name="md_icon" format="reference" />
+    <attr name="md_icon_max_size" format="dimension" />
+    <attr name="md_icon_limit_icon_to_default_size" format="boolean" />
+
+    <attr name="md_title_color" format="color" />
+    <attr name="md_content_color" format="color" />
+
+    <attr name="md_positive_color" format="color" />
+    <attr name="md_neutral_color" format="color" />
+    <attr name="md_negative_color" format="color" />
+    <attr name="md_widget_color" format="color" />
+
+    <attr name="md_item_color" format="color" />
+    <attr name="md_divider_color" format="color" />
+    <attr name="md_list_selector" format="reference" />
+
+    <attr name="md_btn_stacked_selector" format="reference" />
+    <attr name="md_btn_positive_selector" format="reference" />
+    <attr name="md_btn_neutral_selector" format="reference" />
+    <attr name="md_btn_negative_selector" format="reference" />
+
+    <attr name="md_title_gravity" format="enum">
+        <enum name="start" value="0" />
+        <enum name="center" value="1" />
+        <enum name="end" value="2" />
+    </attr>
+
+    <attr name="md_content_gravity" format="enum">
+        <enum name="start" value="0" />
+        <enum name="center" value="1" />
+        <enum name="end" value="2" />
+    </attr>
+
+    <attr name="md_btnstacked_gravity" format="enum">
+        <enum name="start" value="0" />
+        <enum name="center" value="1" />
+        <enum name="end" value="2" />
+    </attr>
+
+    <attr name="md_items_gravity" format="enum">
+        <enum name="start" value="0" />
+        <enum name="center" value="1" />
+        <enum name="end" value="2" />
+    </attr>
+
+    <attr name="md_buttons_gravity" format="enum">
+        <enum name="start" value="0" />
+        <enum name="center" value="1" />
+        <enum name="end" value="2" />
+    </attr>
+
+    <declare-styleable name="MDRootLayout">
+        <attr name="md_reduce_padding_no_title_no_buttons" format="boolean" />
+    </declare-styleable>
+
+    <attr name="md_medium_font" format="string" />
+    <attr name="md_regular_font" format="string" />
+
+
+
+
+
+</resources>

@@ -1,0 +1,18 @@
+exclude:
+  - 'vendor/**/*'
+  - 'db/cms_fixtures/**/*'
+
+linters:
+  IdNames:
+    enabled: false # TODO: enable
+    style: lisp_case
+
+  InstanceVariables:
+    enabled: false # TODO: enable
+    file_types: partials
+    matchers:
+      all: .*
+      partials: \A_.*\.haml\z
+
+  LineLength:
+    max: 121

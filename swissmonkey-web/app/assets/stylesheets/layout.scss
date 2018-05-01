@@ -1,0 +1,28 @@
+// This file houses our layout positioning
+
+.container {
+  width: 90% !important;
+}
+
+#header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .open-overlay {
+    display: inline !important;
+  }
+}
+
+.vertical-align-trick {
+  display: flex;
+  align-items: center;
+}
+
+.login-link {
+  margin-right: 2%;
+}
+
+.login-link,
+.header-menu {
+  display: inline-block;
+  vertical-align: middle;
+}

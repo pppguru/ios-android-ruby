@@ -1,0 +1,14 @@
+// sprockets must be imported first
+@import 'bootstrap-sprockets';
+@import 'font-awesome-sprockets';
+
+// now we can import the rest
+@import 'bootstrap';
+@import 'font-awesome';
+
+// Media Query Mixin
+@mixin max-screen-size($screen-size) {
+  @media screen and (max-width: $screen-size - 1) {
+    @content;
+  }
+}

@@ -1,0 +1,26 @@
+
+<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+
+  <% path = current_user&.employer? ? my_profile_path : '#' %>
+  <%= link_to path do %>
+    <div class="admin-pic">
+      <% if current_user&.profile_pic? && current_user&.employer? %>
+        <%= image_tag current_user.profile_pic %>
+      <% elsif current_user&.employer? %>
+        <%= image_tag 'DefaultPhotoIcon@3x.1.png', class: 'img-circle' %>
+        <%= image_tag 'btm-logo.png' %>
+      <% end %>
+      <% if current_user&.employer? %>
+        <p style="margin-top: 22px"><%= current_user&.name %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= render_navigation(expand_all: true, level: 2..4, renderer: :bootstrap, &left_navigation_menu_items) %>
+
+
+  <div class="sidebar-pattern">
+    <%= image_tag 'images/pattern2.png', alt: 'pattern' %>
+  </div>
+</div>

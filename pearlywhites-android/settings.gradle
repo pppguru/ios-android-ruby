@@ -1,0 +1,1 @@
+include ':app', ':materiallibaray', ':ResideMenu' , ":ffmpeg4android_lib"

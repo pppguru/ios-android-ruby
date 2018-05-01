@@ -1,0 +1,116 @@
+{
+  "name": "swissmonkey",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+  "env": {
+    "AIRBRAKE_API_KEY": {
+      "description": "",
+      "required": false
+    },
+    "AIRBRAKE_PROJECT_ID": {
+      "description": "",
+      "required": false
+    },
+    "AWS_S3_REGION": {
+      "description": "",
+      "required": false
+    },
+    "AWS_S3_BUCKET": {
+      "description": "",
+      "required": false
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "",
+      "required": false
+    },
+    "AWS_ACCESS_KEY_SECRET": {
+      "description": "",
+      "required": false
+    },
+    "FACEBOOK_APP_ID": {
+      "description": "",
+      "required": false
+    },
+    "FACEBOOK_APP_SECRET": {
+      "description": "",
+      "required": false
+    },
+    "LINKED_IN_APP_ID": {
+      "description": "",
+      "required": false
+    },
+    "LINKED_IN_APP_SECRET": {
+      "description": "",
+      "required": false
+    },
+    "GOOGLE_APP_ID": {
+      "description": "",
+      "required": false
+    },
+    "GOOGLE_APP_SECRET": {
+      "description": "",
+      "required": false
+    },
+    "SENDGRID_USERNAME": {
+      "description": "",
+      "required": false
+    },
+    "SENDGRID_PASSWORD": {
+      "description": "",
+      "required": false
+    },
+    "STRIPE_PUBLISHABLE_KEY": {
+      "description": "",
+      "required": false
+    },
+    "STRIPE_SECRET_KEY": {
+      "description": "",
+      "required": false
+    },
+    "COUNTRY_CODE": {
+      "description": "",
+      "required": false
+    },
+    "TWILIO_ACCOUNT_SID": {
+      "description": "",
+      "required": false
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "",
+      "required": false
+    },
+    "TWILIO_NUMBER": {
+      "description": "",
+      "required": false
+    },
+    "RACK_ENV": {
+      "description": "",
+      "required": false
+    },
+    "RAILS_ENV": {
+      "description": "",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "airbrake",
+    "papertrail",
+    "scheduler",
+    "heroku-postgresql",
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rl_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingStart="@dimen/padding_small"
+                android:paddingTop="@dimen/padding_small"
+                tools:context="com.rapidbizapps.swissmonkey.LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/title_bar_left_menu"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="start|center_vertical"
+        android:padding="@dimen/margin_xsmall"
+        android:src="@drawable/menu"/>
+
+    <TextView
+        android:id="@+id/header_text"
+        fontPath="@string/header_font_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Swiss Monkey"
+        android:textColor="@color/purple2"
+        android:textSize="@dimen/header_textsize"/>
+
+    <include
+        android:id="@+id/notification"
+        layout="@layout/notification_icon_layout"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/margin_medium"/>
+
+    <!--
+        <ImageView
+            android:id="@+id/iv_notification"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:src="@drawable/notification_alert_circle"
+            />
+    -->
+
+    <ImageView
+        android:id="@+id/header_right_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:src="@drawable/save"
+        android:visibility="gone"/>
+
+</RelativeLayout>

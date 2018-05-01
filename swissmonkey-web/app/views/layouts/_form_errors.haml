@@ -1,0 +1,8 @@
+- if model.errors.any?
+  .alert.alert-danger#error_explanation
+    %p
+      = pluralize(model.errors.count, 'error')
+      prohibited the form from being saved:
+    %ul
+      - model.errors.full_messages.each do |msg|
+        %li= msg

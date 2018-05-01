@@ -1,0 +1,4 @@
+TODO: fix account confirmation thing
+TODO: use .io for emails
+TODO: revamp process for changing email address on account
+TODO: rebuild subscription model and then port data

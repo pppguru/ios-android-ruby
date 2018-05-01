@@ -1,0 +1,199 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:clickable="true"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@color/content_background"
+                tools:context="com.rapidbizapps.swissmonkey.fragments.AboutUsFragment">
+
+    <com.rba.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/iv_profileImage"
+        android:layout_margin="@dimen/margin_xlarge"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/job_type_profile"
+                    style="@style/edit_text_spinner_style"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:hint="@string/job_type_hint"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edit_text_spinner_container_style"
+                android:layout_marginBottom="@dimen/margin_medium">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_workAvailablity"
+                    style="@style/edit_text_spinner_style"
+                    android:drawableEnd="@drawable/dropdown_arrow"
+                    android:hint="Work Availability"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_work_availability_date"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/label_style"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:text="Date Available"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:weightSum="3">
+                    <com.rba.MaterialEditText
+                        android:id="@+id/et_work_availability_month"
+                        style="@style/edit_text_normal_style"
+                        android:hint="MM"
+                        android:singleLine="true"
+                        android:textSize="@dimen/label_hint_textsize"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        />
+
+                    <com.rba.MaterialEditText
+                        android:id="@+id/et_work_availability_day"
+                        style="@style/edit_text_normal_style"
+                        android:hint="DD"
+                        android:singleLine="true"
+                        android:textSize="@dimen/label_hint_textsize"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        />
+
+                    <com.rba.MaterialEditText
+                        android:id="@+id/et_work_availability_year"
+                        style="@style/edit_text_normal_style"
+                        android:hint="YYYY"
+                        android:singleLine="true"
+                        android:textSize="@dimen/label_hint_textsize"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                layout="@layout/weekdays"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                style="@style/edit_text_spinner_container_style"
+                android:layout_marginTop="@dimen/margin_medium">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_opportunityWithinMiles"
+                    style="@style/edit_text_spinner_style"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    app:met_floatingLabelText="Looking for Opportunities Within"
+                    android:hint="Distance"
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                style="@style/edit_text_spinner_container_style"
+                android:layout_marginTop="@dimen/margin_medium">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_softwareExperience"
+                    style="@style/edit_text_spinner_style"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    app:met_floatingLabelText="Practice Software Experience"
+                    android:hint="Software"
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true"
+                    />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/ll_subSoftwareExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <com.rba.MaterialEditText
+                android:id="@+id/et_other_software_experience"
+                style="@style/edit_text_normal_style"
+                android:cursorVisible="false"
+                android:hint="Software Experience"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                style="@style/edit_text_spinner_container_style"
+                android:layout_marginTop="@dimen/margin_medium">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_additionalSkills"
+                    style="@style/edit_text_spinner_style"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    app:met_floatingLabelText="Additional Skills (check all that apply)"
+                    android:hint="Skills"
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true"
+                    />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/ll_subAdditionalSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <com.rba.MaterialEditText
+                android:id="@+id/et_language"
+                style="@style/edit_text_normal_style"
+                android:cursorVisible="false"
+                android:hint="Languages"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                />
+
+        </LinearLayout>
+
+    </com.rba.ScrollView>
+
+
+</RelativeLayout>

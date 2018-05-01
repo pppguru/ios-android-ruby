@@ -1,0 +1,24 @@
+//
+//  Development.xcconfig
+//  SwissMonkey
+//
+//  Created by Yadagiri Neeli on 11/05/16.
+//  Copyright © 2016 rapidBizApps. All rights reserved.
+//
+
+//BASEURL = "https:\/\/app.swissmonkey.co/api/v1.0"
+k_GOOGLE_API_KEY = "AIzaSyBvD9Ho2rn9uY0mKMFbb47UiMqcC_vkltg"
+k_FLURRY_KEY = "4XM6JZCKD8T43Q97K532"
+
+
+BUILD_NUMBER = 308
+//k_FLURRY_KEY = "SR6P8X4GV7V75HR9FMFH"
+//k_GOOGLE_API_KEY = "AIzaSyDX3YP77hPRdk6SanI9jQ0enax3tLJlQ5Q"
+//BASEURL = "http:\/\/swissmonkey-staging.rapidbizapps.com/api/v1.0"
+//BASEURL = "https:\/\/observation.swissmonkey.co/api/v1.0"  //Staging..
+//BASEURL = "http:\/\/surgery.swissmonkey.co/api/v1.0"
+BASEURL = "https:\/\/checkup.swissmonkey.co/api/v1.0"//Test
+
+BUNDLE_ID = com.rapidBizApps.SwissMonkeyJenkins
+
+GCC_PREPROCESSOR_DEFINITIONS = BUILD_NUMBER=@\"$(BUILD_NUMBER)\" k_FLURRY_KEY=@\"$(k_FLURRY_KEY)\" k_GOOGLE_API_KEY=@\"$(k_GOOGLE_API_KEY)\" BASEURL=@\"$(BASEURL)\" BUNDLE_ID=@\"$(BUNDLE_ID)\"

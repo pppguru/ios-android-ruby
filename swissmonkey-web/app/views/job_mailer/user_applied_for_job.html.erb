@@ -1,0 +1,196 @@
+<% content_for :css do %>
+  <style type="text/css">
+    .star-ratings-sprite {
+      background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+      font-size: 0;
+      height: 21px;
+      line-height: 0;
+      overflow: hidden;
+      text-indent: -999em;
+      width: 110px;
+      margin: 0;
+    }
+
+    .star-ratings-sprite-rating {
+      background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+      background-position: 0 100%;
+      float: left;
+      height: 21px;
+      display: block;
+    }
+  </style>
+<% end %>
+<div style="max-width:844px; margin:0 auto; float:none; font-family: 'Open Sans', sans-serif; background:#FFF;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+      <td>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background:url(<%= asset_path('images/email-tmp-bg.jpg') %>) no-repeat 0 0;">
+          <tbody>
+          <tr>
+            <td align="center">
+              <a href="https://swissmonkey.co/" style="padding:40px 0 60px; display:block; text-align:cenre;"><img src="https://app.swissmonkey.co/images/swiss-monkey-logo.png" alt="logo"/></a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <h1 style="font-family: 'Open Sans', sans-serif; font-size:26px; font-weight:600; margin:0 0 0px; color:#7E287E ;">Hello</h1>
+              <p style="font-family: 'Open Sans', sans-serif; padding:0 10% 40px; color:#0F0F0F; font-weight:700; font-size:16px; font-weight:300; margin:0;">
+                <strong style="color:#0F0F0F; font-weight:700;"><%= @job_seeker_name %></strong> has applied for your
+                post
+                of <a xlink:href="#" style="color:#883189; text-decoration:none;"><%= @position_name %></a></p>
+              {{--
+              <p style="font-family: 'Open Sans', sans-serif; padding:0 10% 40px; color:#696969; font-size:15px; font-weight:300; margin:0;">Applicant
+                has applied for your post of
+                <a xlink:href="#" style="color:#883189; text-decoration:none;">Dental surgeon</a></p>--}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+
+    </tr>
+    <tr style="background:#FCF8FD; ">
+      <td style="padding:5% 10%">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+          <tr>
+            <td align="center" style="padding:0 0 30px; font-size:16px; font-family: 'Open Sans', sans-serif; color:#303030; font-weight:600;">Applicant
+              Summary
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background:#FFF; box-shadow:0 0px 13px 1px rgba(0, 0,0,0.3); font-family: 'Open Sans', sans-serif;">
+          <tbody>
+          <tr>
+            <td width="40%" valign="middle">
+              <img src="<%= @profile_pic %>" alt="profile" style="width:70%; padding:10%"/>
+            </td>
+            <td width="60%">
+              <table width="95%" border="0" cellspacing="0" cellpadding="0" style="padding:20px 0">
+                <tbody>
+                <tr>
+                  <td style="padding:15px 0; color:#666666; font-weight:600;" valign="top">Profile Match</td>
+                  <td style="padding:15px 0; color:#0F0F0F; font-weight:700;" valign="top">
+                    <div class="star-ratings-sprite">
+                      <span style="width: <%= @profile_match %>%" class="star-ratings-sprite-rating"></span></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:15px 0; color:#444748; font-weight:600; font-size:13px;" valign="top" width="40%">Name</td>
+                  <td style="padding:15px 0; color:#747474; font-weight:700; font-size:13px;" valign="top" width="60%"><%= @job_seeker_name %></td>
+                </tr>
+                <tr>
+                  <td style="padding:15px 0; color:#444748; font-weight:600; font-size:13px;" valign="top">Contact
+                    Number
+                  </td>
+                  <td style="padding:15px 0; color:#747474; font-weight:700; font-size:13px;" valign="top"><%= @user_contact %></td>
+                </tr>
+                <tr>
+                  <td style="padding:15px 0; color:#444748; font-weight:600; font-size:13px;" valign="top">Email</td>
+                  <td valign="top" style="padding:15px 0;">
+                    <a href="#" style=" text-decoration:none; color:#747474; font-weight:700; font-size:13px;"><%= @user_email %></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:15px 0; color:#444748; font-weight:600; font-size:13px;" valign="top">Experience</td>
+                  <td style="padding:15px 0; color:#747474; font-weight:700; font-size:13px;" valign="top"><%= @experience %></td>
+                </tr>
+                <tr>
+                  <td style="padding:15px 0; color:#444748; font-weight:600; font-size:13px;" valign="top">Salary
+                    Range
+                  </td>
+                  <td style="padding:15px 0; color:#747474; font-weight:700; font-size:13px;" valign="top"><%= @salary %></td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+          <tr>
+            <td align="center" style="font-family: 'Open Sans', sans-serif; font-size:13px; padding-top:50px; color:#444748; font-weight:600;">Please
+              review the applicant by signing in to
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <a href="https://app.swissmonkey.co/jobseekerdetails/<%= @job_apply_id %>" style="font-family: 'Open Sans', sans-serif; padding-top:50px; color:#883189; text-decoration:none; font-weight:600; ">www.swissmonkey.co</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="movableContent">
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
+      <tr>
+        <td width="100%" colspan="2" style="padding-top:65px;">
+          <hr style="height:1px;border:none;color:#333;background-color:#ddd;"/>
+        </td>
+      </tr>
+      <tr>
+        <td width="60%" height="70" valign="middle" style="padding-bottom:20px;">
+          <div class="contentEditableContainer contentTextEditable">
+            <div class="contentEditable" align='left'>
+              <div>
+                <div dir="ltr">
+                  <div><b><span style="color:rgb(69,129,142);font-size:small">Swiss Monkey</span><br>
+                  </b></div>
+                  <div>
+                    <div style="font-size:12.8px">
+                      <font size="2"><a href="http://www.swissmonkey.co/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.swissmonkey.co/&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNFjcZbZJ0-FzeANWDw0BqHCe7tOiA">www.swissmonkey.co</a><br>
+                      </font></div>
+                    <div style="color:#888888;font-size:12.8px"><font size="2">Office: (916) 500-4125</font></div>
+                    <div style="color:#888888;font-size:12.8px"><span style="font-size:small">Fax: (916) 880-5676</span>
+                    </div>
+                    <div style="font-size:12.8px">
+                      <font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small">
+                        <a href="https://www.facebook.com/swissmonkey.co/" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.facebook.com/swissmonkey.co/&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNHrY1qTdzC7917pOcR2UegsfVHuaw" style="color:#888888;">Facebook</a>&nbsp;|</font>
+                      <font style="color:#888888; font-family:arial,helvetica,sans-serif;font-size:small"></font>
+                      <a href="https://twitter.com/swissmonkeyinc" style="font-family:arial,helvetica,sans-serif;font-size:small; color:#888888;" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://twitter.com/swissmonkeyinc&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNHPmYJQBjz8cEhKinQnvS2e1OSDYQ">Twitter</a>
+                      <font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small"></font><font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small">|</font>
+                      <font style="color:#888888;font-family:arial,helvetica,sans-serif;font-size:small"></font>
+                      <a href="https://www.linkedin.com/company/swiss-monkey-inc" style="font-family:arial,helvetica,sans-serif;font-size:small; color:#888888;" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://www.linkedin.com/company/swiss-monkey-inc&amp;source=gmail&amp;ust=1485243304137000&amp;usg=AFQjCNFzbY8VT2z10cUYGuiPGGEZW56sNA">LinkedIn</a>
+                      <span style="font-size:12.8px;color:#888888; "></span>
+                      <font style="color:#888888; font-family:arial,helvetica,sans-serif;font-size:small">
+                      </font><font style="color:#888888; font-family:arial,helvetica,sans-serif; font-size:small"><u>
+                    </u></font><br>
+                    </div>
+                    <div style="font-size:12.8px"><br>
+                    </div>
+                    <div style="font-size:12.8px">
+                      <img src="https://ci6.googleusercontent.com/proxy/XmcfjqfgY6aLKsJmOTn_XIZt9SX_z2NgAvs4i4dZv1_wabgoKaxdIXVWTafwzXVY1xvk29lh6Yv2JoTVbWflAEbvkjhCwh13K6lqf-bthBZENxxJFO-unvXSRQTHWx8_R80qGXDD14dknPYVdjfo-gHERR05-vqT8rbQDA4yBB0Kxi1Uc_zthDA3_7agbvB8oVxPdOhk7MrUz9g=s0-d-e1-ft#https://docs.google.com/uc?export=download&amp;id=0B3f1tz-pe0rJSDBBR3N0ZFFVeXc&amp;revid=0B3f1tz-pe0rJQjczMDRLRlducU5CUFM2R3ZkTWVGNUFnb2ZNPQ" width="96" height="96" class="CToWUd"><br>
+                    </div>
+                    <div style="font-size:12.8px">
+                      <i style="font-size:12.8px">"Creating dream teams. One practice at a time."</i><br>
+                    </div>
+                  </div>
+                  <div style="font-size:12.8px"><br>
+                  </div>
+                  <div style="font-size:12.8px">
+                    <div dir="ltr">
+                      <div style="font-size:small"><br>
+                      </div>
+                    </div>
+                  </div>
+                  <div><i style="font-size:12.8px"><br>
+                  </i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+var count = <%= @count %>;
+var userAlert = $('.user-alert');
+if (count == 0) {
+  userAlert.hide();
+} else {
+  userAlert.show();
+  userAlert.text(count);
+}

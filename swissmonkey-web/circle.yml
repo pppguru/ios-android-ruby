@@ -1,0 +1,41 @@
+## Customize the test machine
+machine:
+  timezone:
+    America/Los_Angeles # Set the timezone
+  environment:
+    AIRBRAKE_API_KEY: abc
+    AIRBRAKE_PROJECT_ID: abc
+    AWS_S3_REGION: abc
+    AWS_S3_BUCKET: abc
+    AWS_ACCESS_KEY_ID: abc
+    AWS_ACCESS_KEY_SECRET: abc
+    FACEBOOK_APP_ID: abc
+    FACEBOOK_APP_SECRET: abc
+    LINKED_IN_APP_ID: abc
+    LINKED_IN_APP_SECRET: abc
+    GOOGLE_APP_ID: abc
+    GOOGLE_APP_SECRET: abc
+    SENDGRID_USERNAME: 123
+    SENDGRID_PASSWORD: 123
+    STRIPE_PUBLISHABLE_KEY: 123
+    STRIPE_SECRET_KEY: 123
+    COUNTRY_CODE: "+1"
+    TWILIO_ACCOUNT_SID: abc
+    TWILIO_AUTH_TOKEN: abc
+    TWILIO_NUMBER: abc
+
+## Customize dependencies
+dependencies:
+  pre:
+    - gem install bundler
+
+## Customize test commands
+test:
+  post:
+    - bundle exec rubocop
+    - bundle exec haml-lint .
+    - bundle exec scss-lint app/
+
+general:
+  artifacts:
+    - "coverage"  # SimpleCov test coverage reports

@@ -1,0 +1,193 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                android:background="@color/content_background"
+                tools:context="com.rapidbizapps.swissmonkey.fragments.AboutUsFragment"
+                tools:ignore="MissingPrefix">
+
+    <com.rba.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/iv_profileImage"
+        android:layout_margin="@dimen/margin_xxlarge"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_seekingPosition"
+                    style="@style/edit_text_spinner_style"
+                    android:drawableEnd="@drawable/dropdown_arrow"
+                    android:hint="Select Position*"
+                    android:inputType="textNoSuggestions"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_experience"
+                    style="@style/edit_text_spinner_style"
+                    android:hint="Experience*"
+                    android:inputType="textNoSuggestions"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_boardCertified"
+                    style="@style/edit_text_spinner_style"
+                    android:drawableEnd="@drawable/dropdown_arrow"
+                    android:hint="Board Certified"
+                    android:inputType="textNoSuggestions"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    />
+            </LinearLayout>
+
+            <com.rba.MaterialEditText
+                android:id="@+id/et_licenceNumber"
+                style="@style/edit_text_normal_style"
+                android:cursorVisible="false"
+                android:hint="License Number"
+                android:inputType="textNoSuggestions"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:text="@string/licenceExample"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"/>
+
+
+            <LinearLayout
+                android:id="@+id/frag_prog_2_ll_expiry_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/label_style"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:text="Expiration Date"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/label_textcolor"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_licenceExpDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_small"
+                    android:weightSum="3">
+
+
+                    <TextView
+                        android:id="@+id/tv_profile_month"
+                        style="@style/regular_text"
+                        android:layout_marginLeft="@dimen/padding_small"
+                        android:layout_marginRight="@dimen/padding_small"
+                        android:layout_weight="1"
+                        android:hint="MM"
+                        android:inputType="textNoSuggestions"
+                        android:textSize="@dimen/header_textsize"/>
+
+                    <TextView
+                        android:id="@+id/tv_profile_date"
+                        style="@style/regular_text"
+                        android:layout_marginLeft="@dimen/padding_small"
+                        android:layout_marginRight="@dimen/padding_small"
+                        android:layout_weight="1"
+                        android:hint="DD"
+                        android:inputType="textNoSuggestions"
+                        android:textSize="@dimen/header_textsize"/>
+
+                    <TextView
+                        android:id="@+id/tv_profile_year"
+                        style="@style/regular_text"
+                        android:layout_marginLeft="@dimen/padding_small"
+                        android:layout_marginRight="@dimen/padding_small"
+                        android:layout_weight="1"
+                        android:hint="YYYY"
+                        android:inputType="textNoSuggestions"
+                        android:textSize="@dimen/header_textsize"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:orientation="horizontal">
+                <!--<ImageView
+
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/rectangle_70"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:text="@string/disclaimer"/>-->
+
+                <CheckBox
+                    android:id="@+id/cb_licenceVerified"
+                    fontPath="@string/regular_font_path"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity=""
+                    android:paddingTop="@dimen/margin_8"
+                    android:text="@string/disclaimer"
+                    android:textSize="@dimen/label_hint_textsize"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                style="@style/edit_text_spinner_container_style">
+                <com.rba.MaterialEditText
+                    android:id="@+id/et_selectStates"
+                    style="@style/edit_text_spinner_style"
+                    android:hint="Select States"
+                    android:inputType="textNoSuggestions"
+                    android:cursorVisible="false"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.rba.ScrollView>
+
+
+</RelativeLayout>

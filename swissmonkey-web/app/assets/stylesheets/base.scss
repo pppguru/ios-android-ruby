@@ -1,0 +1,25 @@
+// This file houses all our defaults for the website
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $primary-text;
+  background-color: $light-background;
+  font-family: $main-font;
+  padding-top: 70px;
+}
+
+a {
+  color: $primary-text;
+  text-decoration: none;
+  &:hover {
+    color: $primary-text;
+    text-decoration: none;
+  }
+}
+
+input {
+  max-width: 100%;
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@color/white"
+              android:orientation="vertical"
+              tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            style="@style/regular_text"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="@string/terms_of_services"
+            android:textColor="@color/black"
+            android:textSize="@dimen/header_textsize"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/messageText"
+            style="@style/regular_text"
+            android:padding="@dimen/padding_large"
+            android:textAlignment="viewStart"
+            android:textColor="@color/label_textcolor"
+            />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/signUpButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btOK"
+            fontPath="@string/regular_font_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pageTitleColor"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="AGREE"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_textsize"/>
+
+    </LinearLayout>
+
+</LinearLayout>

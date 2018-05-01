@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.rapidbizapps.swissmonkey.fragments.AboutUsFragment"
+                tools:ignore="MissingPrefix"
+                android:background="@drawable/image1">
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="@dimen/margin_65"
+        android:paddingBottom="@dimen/margin_large"
+        android:src="@drawable/support_logo"/>
+
+    <TextView
+        android:id="@+id/tv_aboutUsText"
+        style="@style/label_style"
+        android:layout_below="@id/iv_logo"
+        android:layout_marginLeft="@dimen/margin_40dp"
+        android:layout_marginRight="@dimen/margin_40dp"
+        android:text="@string/aboutUsText"
+        android:textSize="@dimen/label_hint_textsize"
+        android:textColor="@color/label_textcolor2"/>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_aboutUsText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="Contact Us:"
+        android:textSize="@dimen/label_hint_textsize"
+        android:textColor="@color/label_textcolor2"/>
+        <!--android:background="@drawable/edittext_bg"-->
+    <LinearLayout
+        android:id="@+id/l_contactus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tv_line">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phone_icon"/>
+        <TextView
+            android:id="@+id/tv_callUs"
+            style="@style/label_style"
+            android:textColor="@color/label_textcolor2"
+            android:textSize="@dimen/label_hint_textsize"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginLeft="@dimen/margin_small"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/email_icon"
+            android:layout_marginLeft="@dimen/margin_large"/>
+        <TextView
+            android:id="@+id/tv_emailUs"
+            style="@style/label_style"
+            android:textColor="@color/label_textcolor2"
+            android:textSize="@dimen/label_hint_textsize"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginLeft="@dimen/margin_small"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/label_style"
+        android:layout_below="@+id/l_contactus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/trademark_pending"
+        android:textColor="@color/label_textcolor2"
+        android:textSize="@dimen/label_hint_textsize"
+        />
+
+</RelativeLayout>

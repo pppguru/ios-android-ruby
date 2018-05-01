@@ -1,0 +1,29 @@
+
+
+<li class="icon-drop"></li>
+
+<?php if(Session::get('role') == 2):
+    if(empty($job_seekers)):?>
+<li style="color: white"><a href="#"> <?php  ?>No notifications to display</a></li>
+<?php endif; foreach($job_seekers as $applicant):?>
+<li>
+
+  <a href="{{route('jobseekerdetails',$applicant->id)}}"><?php echo $applicant->name ?>, <?php echo $applicant->position_name ?>, has applied to your job posting.
+    <span><?php echo $applicant->time ?> ago</span>
+  </a>
+
+</li>
+<?php endforeach; elseif(Session::get('role') == 3):
+    if(empty($job_seekers)):?>
+<li style="color: white"><a href="#"> <?php  ?>No notifications to display</a></li>
+<?php endif; foreach($job_seekers as $applicant):?>
+<li>
+
+  <a href="{{route('adminjobseekerdetails',$applicant->user_id)}}"><?php echo $applicant->name ?>, was flagged by <?php echo $applicant->company_name ?>.
+    <span><?php echo $applicant->time ?> ago</span>
+  </a>
+
+</li>
+
+<?php endforeach; endif; ?>
+

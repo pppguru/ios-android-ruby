@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/apply_now"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_alignParentEnd="true"
+            android:background="@color/green2"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_hint_textsize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <com.rapidbizapps.swissmonkey.utility.CircleImageView
+                android:id="@+id/company_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_medium"
+                />
+
+            <TextView
+                android:id="@+id/job_detail_type"
+                style="@style/label_style"
+                android:textColor="@color/purple2"
+                android:textSize="@dimen/label_hint_textsize"
+                android:textAllCaps="true"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/job_detail_position"
+                style="@style/regular_text"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textColor="@color/textview_textcolor"
+                android:textSize="@dimen/header_textsize"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                style="@style/label_style"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/company_address"
+                style="@style/label_style"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                android:id="@+id/company_city_state_zip"
+                style="@style/label_style"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:text="@string/primary_contact_label"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                android:id="@+id/primary_contact"
+                style="@style/label_style"
+                android:textSize="@dimen/label_hint_textsize" />
+
+            <TextView
+                android:id="@+id/company_website"
+                style="@style/label_style"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/company_phoneno"
+                    style="@style/label_style"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/phone_icon"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:textColor="@color/purple2"
+                    android:textSize="@dimen/label_hint_textsize"
+                    />
+
+                <TextView
+                    android:id="@+id/company_email"
+                    style="@style/label_style"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/email_icon"
+                    android:textColor="@color/purple2"
+                    android:textSize="@dimen/label_hint_textsize"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator"/>
+
+            <TextView
+                android:id="@+id/job_description_label"
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Job Description"
+                android:textColor="@color/purple2"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Overview:"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                android:id="@+id/job_description"
+                style="@style/label_style"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text=""
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator"/>
+
+            <TextView
+                android:id="@+id/requirements_label"
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Requirements"
+                android:textColor="@color/purple2"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/experience_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/experience"
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/additional_skills_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/additional_skills"
+                style="@style/label_style"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/languages_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/languages"
+                style="@style/label_style"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/practice_management_system_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/practice_management_system"
+                style="@style/label_style"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                android:id="@+id/timing_preferences_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator"/>
+
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Timing Preferences"
+                android:textColor="@color/purple2"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/job_type_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/job_type"
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                android:id="@+id/morning_shift"
+                style="@style/label_style"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                android:id="@+id/afternoon_shift"
+                style="@style/label_style"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:id="@+id/evevning_shift"
+                android:textSize="@dimen/label_hint_textsize"
+                android:layout_marginBottom="@dimen/margin_small"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator"/>
+
+            <TextView
+                android:id="@+id/compensation_label"
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Compensation"
+                android:textColor="@color/purple2"
+                fontPath="@string/bold_font_path" />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/compensation_type_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                android:id="@+id/compensation_type"
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/compensation_amount_label"
+                android:textColor="@color/label_textcolor"
+                android:textSize="@dimen/label_hint_textsize"
+                fontPath="@string/bold_font_path"
+                />
+
+            <TextView
+                style="@style/label_style"
+                android:id="@+id/compensation_amount"
+                android:textColor="@color/green2"
+                android:textSize="@dimen/header_textsize"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_50dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

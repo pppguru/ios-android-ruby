@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:ignore="MissingPrefix"
+              android:layout_gravity="bottom"
+              android:layout_marginEnd="@dimen/activity_horizontal_margin"
+              android:layout_marginStart="@dimen/activity_horizontal_margin"
+              android:orientation="vertical"
+              android:paddingBottom="15dp"
+              android:paddingLeft="5dp"
+              android:paddingRight="5dp"
+              android:paddingTop="15dp">
+
+    <ImageView
+        android:id="@+id/hide_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_navigation_close"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="@color/label_textcolor"
+            android:id="@+id/jobs_for_you"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/save_btn_background"
+            android:gravity="center"
+            android:padding="@dimen/margin_small"
+            android:text="JOBS FOR YOU "/>
+
+        <TextView
+            android:textColor="@color/label_textcolor"
+            android:id="@+id/application_status"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:background="@drawable/save_btn_background"
+            android:padding="@dimen/margin_small"
+            android:text="APPLICATION STATUS"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="@color/label_textcolor"
+            android:id="@+id/job_history"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/save_btn_background"
+            android:gravity="center"
+            android:padding="@dimen/margin_small"
+            android:text="JOB HISTORY"/>
+
+        <TextView
+            android:textColor="@color/label_textcolor"
+            android:id="@+id/saved_jobs"
+            style="@style/regular_text"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_weight="1"
+            android:background="@drawable/save_btn_background"
+            android:gravity="center"
+            android:padding="@dimen/margin_small"
+            android:text="SAVED JOBS"/>
+    </LinearLayout>
+
+</LinearLayout>

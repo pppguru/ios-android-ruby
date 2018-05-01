@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/job_description_label"
+            style="@style/labels"
+            android:text="Experience"
+            android:textColor="@color/purple2"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/experience_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_experience"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/board_certified_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_boardCertified"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/licence_number_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_LicenceNumber"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/expiration_date_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_expirationDate"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/states_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_states"
+            style="@style/label_style"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/label_hint_textsize"
+            />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/practice_software_experience_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_PracticeSoftwareExp"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/other_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_other_software_experience"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/edittext_textcolor" />
+
+        <TextView
+            style="@style/labels"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="Requirements"
+            android:textColor="@color/purple2"
+            />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/work_availablity_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_workAvailablity"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/looking_for_opportunity_within_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_opportunityWithin"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/additional_skills_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_additionalSkills"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/language_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_language"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/compensation_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_compensation"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/expected_salary_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_expSalary"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <TextView
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/others_label"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+            fontPath="@string/bold_font_path"
+            />
+
+        <TextView
+            android:id="@+id/tv_others"
+            style="@style/label_style"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textColor="@color/label_textcolor"
+            android:textSize="@dimen/label_hint_textsize"
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/edittext_textcolor" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_xxlarge"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

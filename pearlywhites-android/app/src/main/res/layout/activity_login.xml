@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="10"
+              tools:ignore="MissingPrefix"
+              tools:context="com.rapidbizapps.swissmonkey.LoginActivity"
+    android:background="@drawable/image1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="160dp"
+            android:src="@drawable/logo" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find the right job for you!"/>
+    </LinearLayout>
+
+
+    <com.rba.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_xxxlarge"
+        android:layout_marginRight="@dimen/margin_xlarge"
+        android:layout_weight="4.5"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.rba.MaterialEditText
+                android:id="@+id/et_username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="email address"
+                android:inputType="textEmailAddress"
+                fontPath="@string/regular_font_path"
+                android:textAlignment="center"
+                android:textSize="@dimen/edittext_textsize"
+                app:met_baseColor="@color/edittext_textcolor"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                app:met_primaryColor="@color/label_textcolor"/>
+                <!--app:met_singleLineEllipsis="true"/>-->
+            <com.rba.MaterialEditText
+                android:id="@+id/et_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_username"
+                android:hint="password"
+                android:textAlignment="center"
+                android:textSize="@dimen/edittext_textsize"
+                fontPath="@string/regular_font_path"
+                android:inputType="textPassword"
+                android:maxLength="30"
+                app:met_baseColor="@color/edittext_textcolor"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextSize="@dimen/label_hint_textsize"
+                app:met_primaryColor="@color/label_textcolor"/>
+                <!--app:met_singleLineEllipsis="true"/>-->
+
+            <TextView
+                android:id="@+id/tv_forgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="1dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/et_password"
+                android:gravity="bottom"
+                fontPath="@string/regular_font_path"
+                android:paddingBottom="@dimen/padding_xsmall"
+                android:singleLine="true"
+                android:text="forgot password"
+                android:textColor="@color/purple2"
+                />
+            <ImageView
+                android:id="@+id/iv_login"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_forgotPassword"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_large"
+                fontPath="@string/regular_font_path"
+                android:src="@drawable/login"/>
+
+
+        </RelativeLayout>
+
+    </com.rba.ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/padding_medium"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <com.rba.AutoScaleTextView
+            android:id="@+id/tv_question"
+            fontPath="@string/regular_font_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="Don't have a Swiss Monkey account?"
+            android:textSize="@dimen/label_hint_textsize"/>
+
+        <com.rba.AutoScaleTextView
+            android:id="@+id/tv_registerNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_question"
+            android:layout_centerHorizontal="true"
+            fontPath="@string/bold_font_path"
+            android:textColor="@color/purple2"
+            android:gravity="center"
+            android:padding="@dimen/padding_small"
+            android:singleLine="true"
+            android:text="@string/register_now"
+            android:textSize="@dimen/label_hint_textsize"/>
+    </RelativeLayout>
+
+</LinearLayout>
